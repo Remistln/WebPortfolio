@@ -5,6 +5,37 @@
 @tailwind utilities;
 
 :root {
-  background-color: #0f172a;
-  color: #f8fafc;
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+/* Custom Scrollbar - DNA Theme */
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: repeating-linear-gradient(45deg,
+            #10b981,
+            #10b981 10px,
+            #0ea5e9 10px,
+            #0ea5e9 20px);
+    border-radius: 8px;
+    border: 3px solid #0f172a;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: repeating-linear-gradient(45deg,
+            #34d399,
+            #34d399 10px,
+            #38bdf8 10px,
+            #38bdf8 20px);
+    border: 3px solid #0f172a;
+    background-clip: content-box;
 }
