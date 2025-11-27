@@ -1,0 +1,143 @@
+{
+    "basics": {
+        "name": "Rémi Staelen",
+        "label": "Data Engineer & Data Scientist",
+        "image": "",
+        "email": "remi.staelen@lacatholille.fr",
+        "phone": "06 28 47 65 89",
+        "url": "",
+        "summary": "Étudiant en Master Data Management in Biosciences, titulaire d’un Bac+5 en data/IA, avec trois ans d’alternance et deux stages dans le domaine. Intérêt marqué pour l’analyse de données appliquée à la biologie et volonté d’évoluer dans des environnements où ces compétences créent une valeur réelle.",
+        "location": {
+            "city": "Villeneuve-d’Ascq",
+            "country": "France",
+            "postalCode": "59650"
+        },
+        "profiles": []
+    },
+    "objective": {
+        "title": "Recherche de Stage",
+        "role": "Data Analyse / Data Engineering / Data Science en santé",
+        "duration": "2 à 5 mois",
+        "availability": "Dès avril 2026",
+        "note": "Possibilité d’alternance en seconde année dès septembre 2026"
+    },
+    "education": [
+        {
+            "institution": "EDN – Université Catholique de Lille",
+            "area": "Master Data Management in Biosciences",
+            "studyType": "Master",
+            "startDate": "2025",
+            "endDate": "En cours",
+            "description": "Bioinformatique, biostatistique, biologie moléculaire et cellulaire",
+            "location": "Lille"
+        },
+        {
+            "institution": "EPSI Lille",
+            "area": "Mastère Chef de projet expert IA",
+            "studyType": "Mastère",
+            "startDate": "2023",
+            "endDate": "2025",
+            "location": "Lille"
+        },
+        {
+            "institution": "EPSI Lille",
+            "area": "Concepteur et Développeur d’Applications",
+            "studyType": "Bachelor",
+            "startDate": "2022",
+            "endDate": "2023",
+            "location": "Lille"
+        },
+        {
+            "institution": "EPSI Lille",
+            "area": "BTS SIO — SLAM",
+            "studyType": "BTS",
+            "startDate": "2020",
+            "endDate": "2022",
+            "location": "Lille"
+        },
+        {
+            "institution": "Lycée Gustave Eiffel",
+            "area": "Sciences de l’Ingénieur",
+            "studyType": "BAC S",
+            "startDate": "2020",
+            "endDate": "2020",
+            "description": "Section européenne anglais",
+            "location": "Armentières"
+        }
+    ],
+    "experience": [
+        {
+            "company": "Reconomia",
+            "position": "Alternance Data Engineer",
+            "startDate": "Septembre 2023",
+            "endDate": "Août 2025",
+            "highlights": [
+                "Mise en place d’une architecture de données relationnelle sur Microsoft Fabric",
+                "Création d’un tableau de bord Power BI pour l’analyse des performances et KPIs",
+                "Génération d’exports automatiques trimestriels destinés à un éco-organisme",
+                "Développement d’un modèle IA de prédiction de pannes d’appareils électroménagers"
+            ]
+        },
+        {
+            "company": "Daweiro",
+            "position": "Alternance Data Engineer",
+            "startDate": "Juillet 2022",
+            "endDate": "Septembre 2023",
+            "highlights": [
+                "Création et administration d’une base de données",
+                "Construction de flux de données",
+                "Développement d’interactions entre la base et les outils internes",
+                "Utilisation d’un modèle IA spaCy pour extraire automatiquement les compétences d’un CV et matcher avec un poste donné"
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "category": "Données & Analyse",
+            "items": [
+                "Modélisation et gestion de bases relationnelles (Lambda, Kappa)",
+                "SQL",
+                "Power BI",
+                "Excel / Google Sheets",
+                "Python",
+                "Pandas",
+                "Scikit-Learn",
+                "PyTorch",
+                "BioPython"
+            ]
+        },
+        {
+            "category": "Cloud",
+            "items": [
+                "AWS (S3, SageMaker, Lambda, Aurora)",
+                "Azure (Azure Machine Learning, Azure Foundry)",
+                "Microsoft Fabric (Data Factory, Dataflow, Warehouse)"
+            ]
+        },
+        {
+            "category": "Langues",
+            "items": [
+                "Anglais : C1"
+            ]
+        }
+    ],
+    "interests": [
+        {
+            "name": "Batterie",
+            "description": "8 ans (dont 3 ans en groupe)"
+        },
+        {
+            "name": "Piano",
+            "description": "1 an"
+        },
+        {
+            "name": "Culture",
+            "description": "Musées d’art et de sciences naturelles"
+        },
+        {
+            "name": "Sport",
+            "description": "Callisthénie"
+        }
+    ],
+    "projects": []
+}

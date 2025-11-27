@@ -1,0 +1,96 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Database, Dna } from 'lucide-react';
+
+export default function Hero({ profile }) {
+    return (
+        <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+            {/* Background Elements */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-bio-accent/10 rounded-full blur-3xl" />
+                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-data-accent/10 rounded-full blur-3xl" />
+            </div>
+
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center z-10">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="mb-8 p-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 inline-flex items-center gap-2"
+                >
+                    <Dna className="w-5 h-5 text-bio-accent" />
+                    <span className="text-sm text-gray-300">Bioinformatics & Data Science</span>
+                    <Database className="w-5 h-5 text-data-accent" />
+                </motion.div>
+
+                <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400"
+                >
+                    {profile.basics.name}
+                </motion.h1>
+
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="text-xl md:text-2xl text-gray-400 max-w-2xl mb-10"
+                >
+                    {profile.basics.label}
+                </motion.p>
+
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="text-lg text-gray-500 max-w-3xl mb-12 leading-relaxed"
+                >
+                    {profile.basics.summary}
+                </motion.p>
+
+                {profile.objective && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.35 }}
+                        className="mb-10 bg-white/5 border border-white/10 rounded-xl p-6 max-w-2xl w-full"
+                    >
+                        <h3 className="text-lg font-semibold text-white mb-2">{profile.objective.title}</h3>
+                        <p className="text-data-accent font-medium mb-1">{profile.objective.role}</p>
+                        <div className="text-sm text-gray-400 flex flex-col sm:flex-row gap-4 justify-center">
+                            <span>{profile.objective.duration}</span>
+                            <span className="hidden sm:inline">•</span>
+                            <span>{profile.objective.availability}</span>
+                        </div>
+                        {profile.objective.note && (
+                            <p className="text-xs text-gray-500 mt-2 italic">{profile.objective.note}</p>
+                        )}
+                    </motion.div>
+                )}
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="flex flex-col sm:flex-row gap-4"
+                >
+                    <a
+                        href="#projects"
+                        className="px-8 py-3 bg-bio-accent hover:bg-bio-accent/90 text-bio-dark font-semibold rounded-lg transition-all flex items-center justify-center gap-2"
+                    >
+                        Voir mes projets
+                        <ArrowRight className="w-4 h-4" />
+                    </a>
+                    <a
+                        href="#contact"
+                        className="px-8 py-3 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-lg border border-white/10 transition-all"
+                    >
+                        Me contacter
+                    </a>
+                </motion.div>
+            </div>
+        </section>
+    );
+}
