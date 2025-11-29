@@ -1,8 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 
 export default function Contact({ profile }) {
+    const [status, setStatus] = useState('idle'); // idle, submitting, success, error
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('submitting');
+
+        const form = e.target;
+        const data = new FormData(form);
+
+        try {
+            const response = await fetch(`https://formspree.io/f/${import.meta.env.VITE_FORMSPREE_ID}`, {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                form.reset();
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            setStatus('error');
+        }
+    };
+
     return (
         <div className="w-full">
             <motion.div
@@ -55,52 +84,111 @@ export default function Contact({ profile }) {
                 </motion.div>
 
                 {/* Contact Form */}
-                <motion.form
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="space-y-6 bg-bio-dark border border-white/10 rounded-2xl p-6 md:p-8 relative z-20"
-                    onSubmit={(e) => e.preventDefault()}
+                    className="bg-bio-dark border border-white/10 rounded-2xl p-6 md:p-8 relative z-20"
                 >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                            <label htmlFor="name" className="text-sm font-medium text-gray-300 ml-1">Nom</label>
-                            <input
-                                type="text"
-                                id="name"
-                                className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-xl focus:outline-none focus:border-bio-accent focus:ring-1 focus:ring-bio-accent transition-all placeholder:text-gray-600"
-                                placeholder="Votre nom"
-                            />
+                    {status === 'success' ? (
+                        <div className="flex flex-col items-center justify-center py-12 text-center space-y-4">
+                            <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center text-green-500 mb-2">
+                                <CheckCircle className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-2xl font-bold text-white">Message envoyé !</h3>
+                            <p className="text-gray-400 max-w-md">
+                                Merci de m'avoir contacté. Je vous répondrai dans les plus brefs délais.
+                            </p>
+                            <button
+                                onClick={() => setStatus('idle')}
+                                className="mt-6 px-6 py-2 bg-white/5 hover:bg-white/10 text-white rounded-lg transition-colors"
+                            >
+                                Envoyer un autre message
+                            </button>
                         </div>
-                        <div className="space-y-2">
-                            <label htmlFor="email" className="text-sm font-medium text-gray-300 ml-1">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-xl focus:outline-none focus:border-bio-accent focus:ring-1 focus:ring-bio-accent transition-all placeholder:text-gray-600"
-                                placeholder="votre@email.com"
-                            />
-                        </div>
-                    </div>
+                    ) : (
+                        <form onSubmit={handleSubmit} className="space-y-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="space-y-2">
+                                    <label htmlFor="name" className="text-sm font-medium text-gray-300 ml-1">Nom</label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        id="name"
+                                        required
+                                        disabled={status === 'submitting'}
+                                        className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-xl focus:outline-none focus:border-bio-accent focus:ring-1 focus:ring-bio-accent transition-all placeholder:text-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                                        placeholder="Votre nom"
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label htmlFor="email" className="text-sm font-medium text-gray-300 ml-1">Email</label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        required
+                                        disabled={status === 'submitting'}
+                                        className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-xl focus:outline-none focus:border-bio-accent focus:ring-1 focus:ring-bio-accent transition-all placeholder:text-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                                        placeholder="votre@email.com"
+                                    />
+                                </div>
+                            </div>
 
-                    <div className="space-y-2">
-                        <label htmlFor="message" className="text-sm font-medium text-gray-300 ml-1">Message</label>
-                        <textarea
-                            id="message"
-                            rows={4}
-                            className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-xl focus:outline-none focus:border-bio-accent focus:ring-1 focus:ring-bio-accent transition-all placeholder:text-gray-600 resize-none"
-                            placeholder="Votre message..."
-                        />
-                    </div>
+                            <div className="space-y-2">
+                                <label htmlFor="message" className="text-sm font-medium text-gray-300 ml-1">Message</label>
+                                <textarea
+                                    name="message"
+                                    id="message"
+                                    rows={4}
+                                    required
+                                    disabled={status === 'submitting'}
+                                    className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-xl focus:outline-none focus:border-bio-accent focus:ring-1 focus:ring-bio-accent transition-all placeholder:text-gray-600 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+                                    placeholder="Votre message..."
+                                />
+                            </div>
 
-                    <button
-                        type="submit"
-                        className="w-full py-4 bg-data-accent hover:bg-data-accent/90 text-white font-bold rounded-xl shadow-lg shadow-data-accent/20 hover:shadow-data-accent/40 transition-all transform hover:-translate-y-0.5"
-                    >
-                        Envoyer le message
-                    </button>
-                </motion.form>
+                            {status === 'error' && (
+                                <div className="flex flex-col gap-2 text-red-400 text-sm bg-red-400/10 p-4 rounded-lg">
+                                    <div className="flex items-center gap-2">
+                                        <AlertCircle className="w-4 h-4 shrink-0" />
+                                        <span className="font-medium">Une erreur est survenue lors de l'envoi.</span>
+                                    </div>
+                                    <p className="text-red-300/80 pl-6">
+                                        Il est possible que le quota de messages soit atteint.
+                                        <br />
+                                        <a
+                                            href={`mailto:${profile.basics.email}`}
+                                            className="underline hover:text-red-200 transition-colors"
+                                        >
+                                            Cliquez ici pour m'envoyer un email directement.
+                                        </a>
+                                    </p>
+                                </div>
+                            )}
+
+                            <button
+                                type="submit"
+                                disabled={status === 'submitting'}
+                                className="w-full py-4 bg-data-accent hover:bg-data-accent/90 text-white font-bold rounded-xl shadow-lg shadow-data-accent/20 hover:shadow-data-accent/40 transition-all transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
+                            >
+                                {status === 'submitting' ? (
+                                    <>
+                                        <Loader2 className="w-5 h-5 animate-spin" />
+                                        Envoi en cours...
+                                    </>
+                                ) : (
+                                    'Envoyer le message'
+                                )}
+                            </button>
+
+                            <p className="text-xs text-center text-gray-500 mt-4">
+                                Powered by Formspree
+                            </p>
+                        </form>
+                    )}
+                </motion.div>
             </div>
         </div>
     );
