@@ -6,9 +6,9 @@
         "email": "remi.staelen@lacatholille.fr",
         "phone": "06 28 47 65 89",
         "url": "",
-        "summary": "Étudiant en Master Data Management in Biosciences, titulaire d’un Bac+5 en data/IA, avec trois ans d’alternance et deux stages dans le domaine. Intérêt marqué pour l’analyse de données appliquée à la biologie et volonté d’évoluer dans des environnements où ces compétences créent une valeur réelle.",
+        "summary": "Étudiant en Master Data Management in Biosciences, titulaire d'un Bac+5 en data/IA, avec trois ans d'alternance et deux stages dans le domaine. Intérêt marqué pour l'analyse de données appliquée à la biologie et volonté d'évoluer dans des environnements où ces compétences créent une valeur réelle.",
         "location": {
-            "city": "Villeneuve-d’Ascq",
+            "city": "Villeneuve-d'Ascq",
             "country": "France",
             "postalCode": "59650"
         },
@@ -18,12 +18,12 @@
         "title": "Recherche de Stage",
         "role": "Data Analyse / Data Engineering / Data Science en santé",
         "duration": "2 à 5 mois",
-        "availability": "Dès avril 2026",
-        "note": "Possibilité d’alternance en seconde année dès septembre 2026"
+        "availability": "Dès début avril 2026",
+        "note": "Possibilité d'alternance en seconde année dès septembre 2026"
     },
     "education": [
         {
-            "institution": "EDN – Université Catholique de Lille",
+            "institution": "EDN - Université Catholique de Lille",
             "area": "Master Data Management in Biosciences",
             "studyType": "Master",
             "startDate": "2025",
@@ -41,7 +41,7 @@
         },
         {
             "institution": "EPSI Lille",
-            "area": "Bachelor Concepteur et Développeur d’Applications",
+            "area": "Bachelor Concepteur et Développeur d'Applications",
             "studyType": "Bachelor",
             "startDate": "2022",
             "endDate": "2023",
@@ -57,7 +57,7 @@
         },
         {
             "institution": "Lycée Gustave Eiffel",
-            "area": "Sciences de l’Ingénieur",
+            "area": "Sciences de l'Ingénieur",
             "studyType": "BAC S",
             "startDate": "2020",
             "endDate": "2020",
@@ -72,11 +72,11 @@
             "startDate": "Septembre 2023",
             "endDate": "Août 2025",
             "highlights": [
-                "Mise en place d’une architecture de données Data Lakehouse (Bronze/Silver/Gold) sur Microsoft Fabric",
-                "Développement end-to-end d’un modèle IA de prédiction de pannes d’appareils électroménagers (XGBoost)",
+                "Mise en place d'une architecture de données Data Lakehouse (Bronze/Silver/Gold) sur Microsoft Fabric",
+                "Développement end-to-end d'un modèle IA de prédiction de pannes d'appareils électroménagers (XGBoost)",
                 "Industrialisation et déploiement du modèle via une API sur Azure Machine Learning avec pipeline CI/CD",
                 "Création de tableaux de bord de pilotage stratégique (KPIs) sur Power BI",
-                "Automatisation des exports et rapports de tonnages trimestriels permettant la récupération de soutiens financiers auprès d’un éco-organisme",
+                "Automatisation des exports et rapports de tonnages trimestriels permettant la récupération de soutiens financiers auprès d'un éco-organisme",
                 "Audit et nettoyage de données volumineuses (Big Data SAV) pour l'entraînement de modèles prédictifs"
             ]
         },
@@ -86,12 +86,25 @@
             "startDate": "Juillet 2022",
             "endDate": "Septembre 2023",
             "highlights": [
-                "Conception et déploiement d’une architecture Cloud Serverless sur AWS (Lambda, S3) pour la veille de tendances sociales",
-                "Développement de pipelines d’ingestion automatisée de données et structuration en Data Lake requêtable via Amazon Athena",
-                "Intégration de services d’Intelligence Artificielle AWS pour l’analyse sémantique et visuelle des contenus viraux",
-                "Développement d’une application web Front-End en ReactJS pour la restitution et le filtrage des tendances",
-                "Mise en place de l’Infrastructure as Code (IaC) via Terraform pour automatiser le déploiement des ressources Cloud",
+                "Conception et déploiement d'une architecture Cloud Serverless sur AWS (Lambda, S3) pour la veille de tendances sociales",
+                "Développement de pipelines d'ingestion automatisée de données et structuration en Data Lake requêtable via Amazon Athena",
+                "Intégration de services d'Intelligence Artificielle AWS pour l'analyse sémantique et visuelle des contenus viraux",
+                "Développement d'une application web Front-End en ReactJS pour la restitution et le filtrage des tendances",
+                "Mise en place de l'Infrastructure as Code (IaC) via Terraform pour automatiser le déploiement des ressources Cloud",
                 "Création de tableaux de bord décisionnels sur Amazon QuickSight pour le suivi des KPIs de viralité"
+            ]
+        },
+        {
+            "company": "PELOPS",
+            "position": "Stage Développeur Fullstack & Ingénieur IA",
+            "startDate": "Janvier 2022",
+            "endDate": "Février 2022",
+            "highlights": [
+                "Développement Fullstack d'un module SIRH de suivi de candidats sur React.js et Symfony",
+                "Conception d'une interface dynamique de gestion des processus de recrutement (Barres de progression, gestion d'états)",
+                "Mise en place de formulaires interactifs liés à une base de données PostgreSQL via API Platform",
+                "R&D en Intelligence Artificielle : Création d'un modèle de parsing de CV (NLP) avec Python et spaCy pour l'extraction automatique de compétences",
+                "Gestion de projet collaborative avec Git et Trello"
             ]
         },
         {
@@ -114,19 +127,26 @@
             "items": [
                 "Modélisation et gestion de bases de données relationnelles (Lambda, Kappa)",
                 "SQL (PostgreSQL, MySQL, Amazon Athena)",
+                "Python (Pandas, Scikit-Learn, PyTorch, BioPython, spaCy)",
+                "Traitement du Langage Naturel (NLP / NER)",
+                "Jupyter Notebook",
                 "Power BI",
                 "Amazon QuickSight",
                 "Excel / Google Sheets",
-                "Python",
-                "Pandas",
-                "Scikit-Learn",
                 "XGBoost",
                 "LightGBM",
                 "Feature Engineering & Optimisation Bayésienne",
                 "Matplotlib",
-                "PyTorch",
-                "BioPython",
                 "R"
+            ]
+        },
+        {
+            "category": "Développement Web & Back-end",
+            "items": [
+                "PHP (Symfony, API Platform, Natif)",
+                "ReactJS (Développement Frontend)",
+                "HTML / JavaScript",
+                "Sécurité Web (Hashage, prévention XSS/SQLi)"
             ]
         },
         {
@@ -144,19 +164,17 @@
             "category": "Outils de Développement",
             "items": [
                 "VS Code",
-                "Git / GitHub (Versioning & Actions)",
+                "Webstorm",
+                "Git / GitHub / GitLab (Versioning & Actions)",
                 "Postman (Tests API)",
-                "ReactJS (Développement Frontend)",
-                "PHP (Natif & Symfony)",
-                "HTML / JavaScript",
-                "Sécurité Web (Hashage, prévention XSS/SQLi)",
-                "Odoo (Intégration API & ERP)"
+                "Odoo (Intégration API & ERP)",
+                "DBeaver"
             ]
         },
         {
             "category": "Gestion de Projet & Méthodologies",
             "items": [
-                "Méthode Agile & Kanban",
+                "Méthode Agile & Kanban (Trello)",
                 "Clean Code & Refactoring (DRY)",
                 "Gestion des risques (Matrice & Analyse)",
                 "Matrice RACI",
