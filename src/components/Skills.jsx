@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function Skills({ skills }) {
+export default function Skills({ skills, t }) {
     return (
         <div className="w-full">
             <motion.div
@@ -10,7 +10,7 @@ export default function Skills({ skills }) {
                 viewport={{ once: true }}
                 className="text-center md:text-left mb-12"
             >
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Compétences Techniques</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.skills.title}</h2>
                 <div className="w-20 h-1 bg-bio-accent md:mx-0 mx-auto rounded-full" />
             </motion.div>
 

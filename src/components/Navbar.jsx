@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Dna } from 'lucide-react';
+import { Menu, X, Dna, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const navItems = [
-    { name: 'Accueil', href: '#hero' },
-    { name: 'Compétences', href: '#skills' },
-    { name: 'Projets', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
-];
-
-export default function Navbar() {
+export default function Navbar({ language, setLanguage, t }) {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+
+    const navItems = [
+        { name: t.nav.home, href: '#hero' },
+        { name: t.nav.skills, href: '#skills' },
+        { name: t.nav.projects, href: '#projects' },
+        { name: t.nav.contact, href: '#contact' },
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -21,6 +21,10 @@ export default function Navbar() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const toggleLanguage = () => {
+        setLanguage(language === 'fr' ? 'en' : 'fr');
+    };
 
     return (
         <nav
@@ -37,7 +41,7 @@ export default function Navbar() {
                     </div>
 
                     <div className="hidden md:block">
-                        <div className="ml-10 flex items-baseline space-x-8">
+                        <div className="ml-10 flex items-center space-x-8">
                             {navItems.map((item) => (
                                 <a
                                     key={item.name}
@@ -47,10 +51,29 @@ export default function Navbar() {
                                     {item.name}
                                 </a>
                             ))}
+                            <button
+                                onClick={toggleLanguage}
+                                className="flex items-center gap-2 text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium border border-white/10 hover:bg-white/5 transition-all"
+                            >
+                                <Globe className="w-4 h-4" />
+                                <div className="flex items-center gap-1">
+                                    <span className={language === 'fr' ? "text-white font-bold" : "text-gray-500"}>FR</span>
+                                    <span className="text-gray-600">|</span>
+                                    <span className={language === 'en' ? "text-white font-bold" : "text-gray-500"}>EN</span>
+                                </div>
+                            </button>
                         </div>
                     </div>
 
-                    <div className="md:hidden">
+                    <div className="md:hidden flex items-center gap-4">
+                        <button
+                            onClick={toggleLanguage}
+                            className="text-gray-300 hover:text-white flex items-center gap-1"
+                        >
+                            <span className={language === 'fr' ? "text-white font-bold" : "text-gray-500"}>FR</span>
+                            <span className="text-gray-600">|</span>
+                            <span className={language === 'en' ? "text-white font-bold" : "text-gray-500"}>EN</span>
+                        </button>
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             className="text-gray-300 hover:text-white p-2"

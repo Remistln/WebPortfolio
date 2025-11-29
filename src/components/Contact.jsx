@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 
-export default function Contact({ profile }) {
+export default function Contact({ profile, t }) {
     const [status, setStatus] = useState('idle'); // idle, submitting, success, error
 
     const handleSubmit = async (e) => {
@@ -40,7 +40,7 @@ export default function Contact({ profile }) {
                 viewport={{ once: true }}
                 className="text-center md:text-left mb-12"
             >
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Me Contacter</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.contact.title}</h2>
                 <div className="w-20 h-1 bg-bio-accent md:mx-0 mx-auto rounded-full" />
             </motion.div>
 
@@ -56,7 +56,7 @@ export default function Contact({ profile }) {
                         <div className="p-3 bg-bio-accent/10 rounded-full text-bio-accent mb-3 group-hover:scale-110 transition-transform">
                             <Mail className="w-6 h-6" />
                         </div>
-                        <p className="text-xs text-gray-400 mb-1">Email</p>
+                        <p className="text-xs text-gray-400 mb-1">{t.contact.email}</p>
                         <a href={`mailto:${profile.basics.email}`} className="text-sm font-medium text-white hover:text-bio-accent break-all">
                             {profile.basics.email}
                         </a>
@@ -66,7 +66,7 @@ export default function Contact({ profile }) {
                         <div className="p-3 bg-data-accent/10 rounded-full text-data-accent mb-3 group-hover:scale-110 transition-transform">
                             <Phone className="w-6 h-6" />
                         </div>
-                        <p className="text-xs text-gray-400 mb-1">Téléphone</p>
+                        <p className="text-xs text-gray-400 mb-1">{t.contact.phone}</p>
                         <p className="text-sm font-medium text-white">
                             {profile.basics.phone}
                         </p>
@@ -76,7 +76,7 @@ export default function Contact({ profile }) {
                         <div className="p-3 bg-bio-accent/10 rounded-full text-bio-accent mb-3 group-hover:scale-110 transition-transform">
                             <MapPin className="w-6 h-6" />
                         </div>
-                        <p className="text-xs text-gray-400 mb-1">Localisation</p>
+                        <p className="text-xs text-gray-400 mb-1">{t.contact.location}</p>
                         <p className="text-sm font-medium text-white">
                             {profile.basics.location.city}, {profile.basics.location.country}
                         </p>
@@ -96,22 +96,22 @@ export default function Contact({ profile }) {
                             <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center text-green-500 mb-2">
                                 <CheckCircle className="w-8 h-8" />
                             </div>
-                            <h3 className="text-2xl font-bold text-white">Message envoyé !</h3>
+                            <h3 className="text-2xl font-bold text-white">{t.contact.form.success}</h3>
                             <p className="text-gray-400 max-w-md">
-                                Merci de m'avoir contacté. Je vous répondrai dans les plus brefs délais.
+                                {t.contact.form.successDesc}
                             </p>
                             <button
                                 onClick={() => setStatus('idle')}
                                 className="mt-6 px-6 py-2 bg-white/5 hover:bg-white/10 text-white rounded-lg transition-colors"
                             >
-                                Envoyer un autre message
+                                {t.contact.form.another}
                             </button>
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <label htmlFor="name" className="text-sm font-medium text-gray-300 ml-1">Nom</label>
+                                    <label htmlFor="name" className="text-sm font-medium text-gray-300 ml-1">{t.contact.form.name}</label>
                                     <input
                                         type="text"
                                         name="name"
@@ -119,11 +119,11 @@ export default function Contact({ profile }) {
                                         required
                                         disabled={status === 'submitting'}
                                         className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-xl focus:outline-none focus:border-bio-accent focus:ring-1 focus:ring-bio-accent transition-all placeholder:text-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
-                                        placeholder="Votre nom"
+                                        placeholder={t.contact.form.placeholderName}
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label htmlFor="email" className="text-sm font-medium text-gray-300 ml-1">Email</label>
+                                    <label htmlFor="email" className="text-sm font-medium text-gray-300 ml-1">{t.contact.form.email}</label>
                                     <input
                                         type="email"
                                         name="email"
@@ -131,13 +131,13 @@ export default function Contact({ profile }) {
                                         required
                                         disabled={status === 'submitting'}
                                         className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-xl focus:outline-none focus:border-bio-accent focus:ring-1 focus:ring-bio-accent transition-all placeholder:text-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
-                                        placeholder="votre@email.com"
+                                        placeholder={t.contact.form.placeholderEmail}
                                     />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
-                                <label htmlFor="message" className="text-sm font-medium text-gray-300 ml-1">Message</label>
+                                <label htmlFor="message" className="text-sm font-medium text-gray-300 ml-1">{t.contact.form.message}</label>
                                 <textarea
                                     name="message"
                                     id="message"
@@ -145,7 +145,7 @@ export default function Contact({ profile }) {
                                     required
                                     disabled={status === 'submitting'}
                                     className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-xl focus:outline-none focus:border-bio-accent focus:ring-1 focus:ring-bio-accent transition-all placeholder:text-gray-600 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
-                                    placeholder="Votre message..."
+                                    placeholder={t.contact.form.placeholderMessage}
                                 />
                             </div>
 
@@ -153,16 +153,16 @@ export default function Contact({ profile }) {
                                 <div className="flex flex-col gap-2 text-red-400 text-sm bg-red-400/10 p-4 rounded-lg">
                                     <div className="flex items-center gap-2">
                                         <AlertCircle className="w-4 h-4 shrink-0" />
-                                        <span className="font-medium">Une erreur est survenue lors de l'envoi.</span>
+                                        <span className="font-medium">{t.contact.form.error}</span>
                                     </div>
                                     <p className="text-red-300/80 pl-6">
-                                        Il est possible que le quota de messages soit atteint.
+                                        {t.contact.form.errorDesc}
                                         <br />
                                         <a
                                             href={`mailto:${profile.basics.email}`}
                                             className="underline hover:text-red-200 transition-colors"
                                         >
-                                            Cliquez ici pour m'envoyer un email directement.
+                                            {t.contact.form.emailFallback}
                                         </a>
                                     </p>
                                 </div>
@@ -176,10 +176,10 @@ export default function Contact({ profile }) {
                                 {status === 'submitting' ? (
                                     <>
                                         <Loader2 className="w-5 h-5 animate-spin" />
-                                        Envoi en cours...
+                                        {t.contact.form.sending}
                                     </>
                                 ) : (
-                                    'Envoyer le message'
+                                    t.contact.form.send
                                 )}
                             </button>
 

@@ -11,7 +11,7 @@ const getIcon = (name) => {
     return <BookOpen className="w-6 h-6" />;
 };
 
-export default function Interests({ interests }) {
+export default function Interests({ interests, t }) {
     if (!interests || interests.length === 0) return null;
 
     return (
@@ -22,7 +22,7 @@ export default function Interests({ interests }) {
                 viewport={{ once: true }}
                 className="text-center md:text-left mb-12"
             >
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Loisirs & Intérêts</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.interests.title}</h2>
                 <div className="w-20 h-1 bg-white/20 md:mx-0 mx-auto rounded-full" />
             </motion.div>
 

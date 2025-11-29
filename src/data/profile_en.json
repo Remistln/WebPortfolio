@@ -1,0 +1,215 @@
+{
+    "basics": {
+        "name": "Rémi Staelen",
+        "label": "Data Engineer & Data Scientist",
+        "image": "",
+        "email": "remistpro@gmail.com",
+        "phone": "06 28 47 65 89",
+        "url": "",
+        "summary": "Master's student in Data Management in Biosciences, holding a Master's degree in Data/AI, with three years of work-study experience and two internships in the field. Strong interest in data analysis applied to biology and eager to evolve in environments where these skills create real value.",
+        "location": {
+            "city": "Villeneuve-d'Ascq",
+            "country": "France",
+            "postalCode": "59650"
+        },
+        "profiles": []
+    },
+    "objective": {
+        "title": "Looking for Internship",
+        "role": "Data Analyst / Data Engineer / Data Scientist in Health",
+        "duration": "2 to 5 months",
+        "availability": "From early April 2026",
+        "note": "Possibility of work-study for the second year starting September 2026"
+    },
+    "education": [
+        {
+            "institution": "EDN - Catholic University of Lille",
+            "area": "Master Data Management in Biosciences",
+            "studyType": "Master",
+            "startDate": "2025",
+            "endDate": "Present",
+            "description": "Bioinformatics, biostatistics, molecular and cellular biology",
+            "location": "Lille"
+        },
+        {
+            "institution": "EPSI Lille",
+            "area": "Master's in AI Project Management",
+            "studyType": "Master",
+            "startDate": "2023",
+            "endDate": "2025",
+            "location": "Lille"
+        },
+        {
+            "institution": "EPSI Lille",
+            "area": "Bachelor Application Designer and Developer",
+            "studyType": "Bachelor",
+            "startDate": "2022",
+            "endDate": "2023",
+            "location": "Lille"
+        },
+        {
+            "institution": "EPSI Lille",
+            "area": "HND in Software Solutions and Business Applications",
+            "studyType": "HND",
+            "startDate": "2020",
+            "endDate": "2022",
+            "location": "Lille"
+        },
+        {
+            "institution": "Gustave Eiffel High School",
+            "area": "Engineering Sciences",
+            "studyType": "High School Diploma",
+            "startDate": "2020",
+            "endDate": "2020",
+            "description": "European English Section",
+            "location": "Armentières"
+        }
+    ],
+    "experience": [
+        {
+            "company": "Reconomia",
+            "position": "Data Engineer / Analyst / Scientist Apprentice",
+            "startDate": "September 2023",
+            "endDate": "August 2025",
+            "highlights": [
+                "Implementation of a Data Lakehouse architecture (Bronze/Silver/Gold) on Microsoft Fabric",
+                "End-to-end development of an AI model for predicting appliance breakdowns (XGBoost)",
+                "Industrialization and deployment of the model via an API on Azure Machine Learning with CI/CD pipeline",
+                "Creation of strategic dashboard (KPIs) on Power BI",
+                "Automation of quarterly tonnage exports and reports enabling financial support recovery from an eco-organization",
+                "Audit and cleaning of large datasets (Big Data After-Sales Service) for predictive model training"
+            ]
+        },
+        {
+            "company": "Daweiro",
+            "position": "Data Engineer / Analyst Apprentice",
+            "startDate": "July 2022",
+            "endDate": "September 2023",
+            "highlights": [
+                "Design and deployment of a Serverless Cloud architecture on AWS (Lambda, S3) for social trend monitoring",
+                "Development of automated data ingestion pipelines and structuring into a queryable Data Lake via Amazon Athena",
+                "Integration of AWS AI services for semantic and visual analysis of viral content",
+                "Development of a Front-End web application in ReactJS for trend restitution and filtering",
+                "Implementation of Infrastructure as Code (IaC) via Terraform to automate Cloud resource deployment",
+                "Creation of decision-making dashboards on Amazon QuickSight for tracking virality KPIs"
+            ]
+        },
+        {
+            "company": "PELOPS",
+            "position": "Fullstack Developer & AI Engineer Intern",
+            "startDate": "January 2022",
+            "endDate": "February 2022",
+            "highlights": [
+                "Fullstack development of an HRIS candidate tracking module on React.js and Symfony",
+                "Design of a dynamic recruitment process management interface (Progress bars, state management)",
+                "Implementation of interactive forms linked to a PostgreSQL database via API Platform",
+                "AI R&D: Creation of a CV parsing model (NLP) with Python and spaCy for automatic skill extraction",
+                "Collaborative project management with Git and Trello"
+            ]
+        },
+        {
+            "company": "AllYouNeed",
+            "position": "Back-end Developer Intern",
+            "startDate": "May 2021",
+            "endDate": "June 2021",
+            "highlights": [
+                "Design and development of a secure authentication module (Login/Register) in native PHP coupled with a MySQL database",
+                "Application security: implementation of password hashing and protection against SQL injections and XSS vulnerabilities",
+                "Refactoring and code optimization (Clean Code) by separating business logic and display to facilitate maintenance",
+                "Implementation of development best practices: versioning with Git/GitHub and respect for the DRY principle",
+                "Integration of third-party APIs (SMS/Microsoft) and initiation to Cloud services (AWS) and Symfony framework"
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "category": "Data & Analysis",
+            "items": [
+                "Relational Database Modeling and Management (Lambda, Kappa)",
+                "SQL (PostgreSQL, MySQL, Amazon Athena)",
+                "Python (Pandas, Scikit-Learn, PyTorch, BioPython, spaCy)",
+                "Natural Language Processing (NLP / NER)",
+                "Jupyter Notebook",
+                "Power BI",
+                "Amazon QuickSight",
+                "Excel / Google Sheets",
+                "XGBoost",
+                "LightGBM",
+                "Feature Engineering & Bayesian Optimization",
+                "Matplotlib",
+                "R"
+            ]
+        },
+        {
+            "category": "Web & Back-end Development",
+            "items": [
+                "PHP (Symfony, API Platform, Native)",
+                "ReactJS (Frontend Development)",
+                "HTML / JavaScript",
+                "Web Security (Hashing, XSS/SQLi prevention)"
+            ]
+        },
+        {
+            "category": "Cloud & MLOps",
+            "items": [
+                "AWS (Lambda, S3, Athena, QuickSight, SageMaker, EC2)",
+                "Azure (Azure Machine Learning, Azure Foundry, Blob Storage)",
+                "Microsoft Fabric (Data Factory, Dataflow, Warehouse, Lakehouse)",
+                "Infrastructure as Code (Terraform)",
+                "Serverless Architecture",
+                "CI/CD & Automated Pipelines"
+            ]
+        },
+        {
+            "category": "Development Tools",
+            "items": [
+                "VS Code",
+                "Webstorm",
+                "Git / GitHub / GitLab (Versioning & Actions)",
+                "Postman (API Testing)",
+                "Odoo (API & ERP Integration)",
+                "DBeaver"
+            ]
+        },
+        {
+            "category": "Project Management & Methodologies",
+            "items": [
+                "Agile & Kanban Method (Trello)",
+                "Clean Code & Refactoring (DRY)",
+                "Risk Management (Matrix & Analysis)",
+                "RACI Matrix",
+                "Change Management (ADKAR Method)"
+            ]
+        },
+        {
+            "category": "Languages",
+            "items": [
+                "French: Native",
+                "English: C1"
+            ]
+        }
+    ],
+    "interests": [
+        {
+            "name": "Drums",
+            "description": "8 years (including 3 years in a band)"
+        },
+        {
+            "name": "Piano",
+            "description": "1 year"
+        },
+        {
+            "name": "Culture",
+            "description": "Art and Natural Science Museums"
+        },
+        {
+            "name": "Sport",
+            "description": "Calisthenics"
+        },
+        {
+            "name": "Formula 1",
+            "description": "Motorsport enthusiast"
+        }
+    ],
+    "projects": []
+}
