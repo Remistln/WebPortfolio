@@ -11,12 +11,12 @@ export default function Hero({ profile }) {
                 <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-data-accent/10 rounded-full blur-3xl" />
             </div>
 
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center z-10">
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center z-20">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="mb-8 p-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 inline-flex items-center gap-2"
+                    className="mb-8 p-3 bg-bio-dark rounded-full border border-white/10 inline-flex items-center gap-2 relative z-20"
                 >
                     <Dna className="w-5 h-5 text-bio-accent" />
                     <span className="text-sm text-gray-300">Bioinformatics & Data Science</span>
@@ -55,7 +55,7 @@ export default function Hero({ profile }) {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.35 }}
-                        className="mb-10 bg-white/5 border border-white/10 rounded-xl p-6 max-w-2xl w-full"
+                        className="mb-10 bg-bio-dark border border-white/10 rounded-xl p-6 max-w-2xl w-full relative z-20"
                     >
                         <h3 className="text-lg font-semibold text-white mb-2">{profile.objective.title}</h3>
                         <p className="text-data-accent font-medium mb-1">{profile.objective.role}</p>

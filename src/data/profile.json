@@ -41,7 +41,7 @@
         },
         {
             "institution": "EPSI Lille",
-            "area": "Concepteur et Développeur d’Applications",
+            "area": "Bachelor Concepteur et Développeur d’Applications",
             "studyType": "Bachelor",
             "startDate": "2022",
             "endDate": "2023",
@@ -49,7 +49,7 @@
         },
         {
             "institution": "EPSI Lille",
-            "area": "BTS SIO — SLAM",
+            "area": "BTS SIO — Solutions Logicielles et Applications Métiers",
             "studyType": "BTS",
             "startDate": "2020",
             "endDate": "2022",
@@ -68,26 +68,43 @@
     "experience": [
         {
             "company": "Reconomia",
-            "position": "Alternance Data Engineer",
+            "position": "Alternance Data Engineer / Analyst / Scientist",
             "startDate": "Septembre 2023",
             "endDate": "Août 2025",
             "highlights": [
-                "Mise en place d’une architecture de données relationnelle sur Microsoft Fabric",
-                "Création d’un tableau de bord Power BI pour l’analyse des performances et KPIs",
-                "Génération d’exports automatiques trimestriels destinés à un éco-organisme",
-                "Développement d’un modèle IA de prédiction de pannes d’appareils électroménagers"
+                "Mise en place d’une architecture de données Data Lakehouse (Bronze/Silver/Gold) sur Microsoft Fabric",
+                "Développement end-to-end d’un modèle IA de prédiction de pannes d’appareils électroménagers (XGBoost)",
+                "Industrialisation et déploiement du modèle via une API sur Azure Machine Learning avec pipeline CI/CD",
+                "Création de tableaux de bord de pilotage stratégique (KPIs) sur Power BI",
+                "Automatisation des exports et rapports de tonnages trimestriels permettant la récupération de soutiens financiers auprès d’un éco-organisme",
+                "Audit et nettoyage de données volumineuses (Big Data SAV) pour l'entraînement de modèles prédictifs"
             ]
         },
         {
             "company": "Daweiro",
-            "position": "Alternance Data Engineer",
+            "position": "Alternance Data Engineer / Analyst",
             "startDate": "Juillet 2022",
             "endDate": "Septembre 2023",
             "highlights": [
-                "Création et administration d’une base de données",
-                "Construction de flux de données",
-                "Développement d’interactions entre la base et les outils internes",
-                "Utilisation d’un modèle IA spaCy pour extraire automatiquement les compétences d’un CV et matcher avec un poste donné"
+                "Conception et déploiement d’une architecture Cloud Serverless sur AWS (Lambda, S3) pour la veille de tendances sociales",
+                "Développement de pipelines d’ingestion automatisée de données et structuration en Data Lake requêtable via Amazon Athena",
+                "Intégration de services d’Intelligence Artificielle AWS pour l’analyse sémantique et visuelle des contenus viraux",
+                "Développement d’une application web Front-End en ReactJS pour la restitution et le filtrage des tendances",
+                "Mise en place de l’Infrastructure as Code (IaC) via Terraform pour automatiser le déploiement des ressources Cloud",
+                "Création de tableaux de bord décisionnels sur Amazon QuickSight pour le suivi des KPIs de viralité"
+            ]
+        },
+        {
+            "company": "AllYouNeed",
+            "position": "Stage Développeur Back-end",
+            "startDate": "Mai 2021",
+            "endDate": "Juin 2021",
+            "highlights": [
+                "Conception et développement d'un module d'authentification sécurisé (Login/Register) en PHP natif couplé à une base de données MySQL",
+                "Sécurisation de l'application : implémentation du hachage de mots de passe et protection contre les injections SQL et failles XSS",
+                "Refactoring et optimisation du code (Clean Code) via la séparation de la logique métier et de l'affichage pour faciliter la maintenance",
+                "Mise en place des bonnes pratiques de développement : versionning avec Git/GitHub et respect du principe DRY",
+                "Intégration d'API tierces (SMS/Microsoft) et initiation aux services Cloud (AWS) et au framework Symfony"
             ]
         }
     ],
@@ -95,28 +112,61 @@
         {
             "category": "Données & Analyse",
             "items": [
-                "Modélisation et gestion de bases relationnelles (Lambda, Kappa)",
-                "SQL",
+                "Modélisation et gestion de bases de données relationnelles (Lambda, Kappa)",
+                "SQL (PostgreSQL, MySQL, Amazon Athena)",
                 "Power BI",
+                "Amazon QuickSight",
                 "Excel / Google Sheets",
                 "Python",
                 "Pandas",
                 "Scikit-Learn",
+                "XGBoost",
+                "LightGBM",
+                "Feature Engineering & Optimisation Bayésienne",
+                "Matplotlib",
                 "PyTorch",
-                "BioPython"
+                "BioPython",
+                "R"
             ]
         },
         {
-            "category": "Cloud",
+            "category": "Cloud & MLOps",
             "items": [
-                "AWS (S3, SageMaker, Lambda, Aurora)",
-                "Azure (Azure Machine Learning, Azure Foundry)",
-                "Microsoft Fabric (Data Factory, Dataflow, Warehouse)"
+                "AWS (Lambda, S3, Athena, QuickSight, SageMaker, EC2)",
+                "Azure (Azure Machine Learning, Azure Foundry, Blob Storage)",
+                "Microsoft Fabric (Data Factory, Dataflow, Warehouse, Lakehouse)",
+                "Infrastructure as Code (Terraform)",
+                "Architecture Serverless",
+                "CI/CD & Pipelines automatisés"
+            ]
+        },
+        {
+            "category": "Outils de Développement",
+            "items": [
+                "VS Code",
+                "Git / GitHub (Versioning & Actions)",
+                "Postman (Tests API)",
+                "ReactJS (Développement Frontend)",
+                "PHP (Natif & Symfony)",
+                "HTML / JavaScript",
+                "Sécurité Web (Hashage, prévention XSS/SQLi)",
+                "Odoo (Intégration API & ERP)"
+            ]
+        },
+        {
+            "category": "Gestion de Projet & Méthodologies",
+            "items": [
+                "Méthode Agile & Kanban",
+                "Clean Code & Refactoring (DRY)",
+                "Gestion des risques (Matrice & Analyse)",
+                "Matrice RACI",
+                "Conduite du changement (Méthode ADKAR)"
             ]
         },
         {
             "category": "Langues",
             "items": [
+                "Français : Natif",
                 "Anglais : C1"
             ]
         }
@@ -137,6 +187,10 @@
         {
             "name": "Sport",
             "description": "Callisthénie"
+        },
+        {
+            "name": "Formule 1",
+            "description": "Passionné de sport automobile"
         }
     ],
     "projects": []
