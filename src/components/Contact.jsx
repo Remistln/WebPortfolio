@@ -52,7 +52,7 @@ export default function Contact({ profile, t }) {
                     viewport={{ once: true }}
                     className="grid grid-cols-1 sm:grid-cols-3 gap-4"
                 >
-                    <div className="bg-bio-dark border border-white/10 rounded-xl p-4 flex flex-col items-center text-center hover:bg-white/10 transition-colors group relative z-20">
+                    <div className="bg-bio-dark border border-white/10 rounded-xl p-4 flex flex-col items-center text-center hover:border-bio-accent/50 transition-colors group relative z-20">
                         <div className="p-3 bg-bio-accent/10 rounded-full text-bio-accent mb-3 group-hover:scale-110 transition-transform">
                             <Mail className="w-6 h-6" />
                         </div>
@@ -62,7 +62,7 @@ export default function Contact({ profile, t }) {
                         </a>
                     </div>
 
-                    <div className="bg-bio-dark border border-white/10 rounded-xl p-4 flex flex-col items-center text-center hover:bg-white/10 transition-colors group relative z-20">
+                    <div className="bg-bio-dark border border-white/10 rounded-xl p-4 flex flex-col items-center text-center hover:border-bio-accent/50 transition-colors group relative z-20">
                         <div className="p-3 bg-data-accent/10 rounded-full text-data-accent mb-3 group-hover:scale-110 transition-transform">
                             <Phone className="w-6 h-6" />
                         </div>
@@ -72,7 +72,7 @@ export default function Contact({ profile, t }) {
                         </p>
                     </div>
 
-                    <div className="bg-bio-dark border border-white/10 rounded-xl p-4 flex flex-col items-center text-center hover:bg-white/10 transition-colors group relative z-20">
+                    <div className="bg-bio-dark border border-white/10 rounded-xl p-4 flex flex-col items-center text-center hover:border-bio-accent/50 transition-colors group relative z-20">
                         <div className="p-3 bg-bio-accent/10 rounded-full text-bio-accent mb-3 group-hover:scale-110 transition-transform">
                             <MapPin className="w-6 h-6" />
                         </div>
