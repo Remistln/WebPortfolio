@@ -3,10 +3,35 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function DNABackground() {
     const containerRef = useRef(null);
+    const [startOffset, setStartOffset] = React.useState(0);
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end end"]
     });
+
+    React.useEffect(() => {
+        const updateOffset = () => {
+            const hero = document.getElementById('hero');
+            if (hero) {
+                setStartOffset(hero.offsetHeight);
+            }
+        };
+
+        // Initial update
+        updateOffset();
+
+        // Watch for resize
+        const hero = document.getElementById('hero');
+        if (hero) {
+            const resizeObserver = new ResizeObserver(updateOffset);
+            resizeObserver.observe(hero);
+            return () => resizeObserver.disconnect();
+        }
+
+        // Fallback resize listener if ResizeObserver fails or hero not found immediately
+        window.addEventListener('resize', updateOffset);
+        return () => window.removeEventListener('resize', updateOffset);
+    }, []);
 
     // Create a long strand of DNA nodes
     // We'll use a repeating pattern approach for the visual
@@ -15,7 +40,10 @@ export default function DNABackground() {
 
     return (
         <div ref={containerRef} className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-            <div className="absolute inset-0 top-[160vh] md:top-[110vh]">
+            <div
+                className="absolute inset-0"
+                style={{ top: startOffset ? `${startOffset}px` : '100vh' }}
+            >
                 {/* Central Axis Line */}
                 <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-bio-accent/20 to-transparent -translate-x-1/2" />
 
