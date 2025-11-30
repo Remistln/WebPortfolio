@@ -34,7 +34,7 @@ export default function Interests({ interests, t }) {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.1 }}
-                        className="bg-bio-dark border border-white/10 rounded-xl p-6 text-center hover:bg-white/10 transition-colors relative z-20"
+                        className="bg-bio-dark border border-white/10 rounded-xl p-6 text-center hover:border-bio-accent/50 transition-colors relative z-20"
                     >
                         <div className="w-12 h-12 bg-gradient-to-br from-bio-accent to-data-accent rounded-lg flex items-center justify-center mx-auto mb-4 text-white">
                             {getIcon(interest.name)}

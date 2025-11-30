@@ -57,7 +57,7 @@ export default function Contact({ profile, t }) {
                             <Mail className="w-6 h-6" />
                         </div>
                         <p className="text-xs text-gray-400 mb-1">{t.contact.email}</p>
-                        <a href={`mailto:${profile.basics.email}`} className="text-sm font-medium text-white hover:text-bio-accent break-all">
+                        <a href={`mailto:${profile.basics.email}`} className="text-sm font-medium text-white hover:text-bio-accent whitespace-nowrap">
                             {profile.basics.email}
                         </a>
                     </div>
