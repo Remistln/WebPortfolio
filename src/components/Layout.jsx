@@ -9,7 +9,7 @@ export default function Layout({ children, language, setLanguage, t, profile }) 
         <div className="min-h-screen bg-bio-dark text-slate-50 font-sans selection:bg-bio-accent/30 relative overflow-x-hidden">
             <DNABackground />
             <div className="relative z-20">
-                <Navbar language={language} setLanguage={setLanguage} t={t} />
+                <Navbar language={language} setLanguage={setLanguage} t={t} profile={profile} />
                 <main className="flex-grow">
                     {children}
                 </main>

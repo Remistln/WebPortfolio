@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 
 export default function Projects({ projects, t }) {
-    if (!projects || projects.length === 0) return null;
-
     return (
         <div className="w-full">
             <motion.div
@@ -17,57 +15,78 @@ export default function Projects({ projects, t }) {
                 <div className="w-20 h-1 bg-data-accent md:mx-0 mx-auto rounded-full" />
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {projects.map((project, idx) => (
-                    <motion.div
-                        key={project.title}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: idx * 0.1 }}
-                        className="group bg-bio-dark border border-white/10 rounded-xl overflow-hidden hover:border-data-accent/50 transition-all duration-300 relative z-20"
-                    >
-                        <div className="h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
-                            {/* Placeholder for project image if not available */}
-                            <div className="absolute inset-0 bg-bio-accent/5 group-hover:bg-bio-accent/10 transition-colors" />
-                            <span className="text-4xl font-bold text-white/10 select-none">{project.title[0]}</span>
-                        </div>
+            {(!projects || projects.length === 0) ? (
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center py-12 bg-bio-dark border border-white/10 rounded-xl"
+                >
+                    <p className="text-xl text-gray-300">
+                        {t.projects.fallback}{' '}
+                        <a
+                            href="https://github.com/Remistln/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-bio-accent hover:underline font-bold"
+                        >
+                            {t.projects.github}
+                        </a>
+                    </p>
+                </motion.div>
+            ) : (
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    {projects.map((project, idx) => (
+                        <motion.div
+                            key={project.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.1 }}
+                            className="group bg-bio-dark border border-white/10 rounded-xl overflow-hidden hover:border-data-accent/50 transition-all duration-300 relative z-20"
+                        >
+                            <div className="h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
+                                {/* Placeholder for project image if not available */}
+                                <div className="absolute inset-0 bg-bio-accent/5 group-hover:bg-bio-accent/10 transition-colors" />
+                                <span className="text-4xl font-bold text-white/10 select-none">{project.title[0]}</span>
+                            </div>
 
-                        <div className="p-6">
-                            <h3 className="text-xl font-bold mb-2 group-hover:text-data-accent transition-colors">
-                                {project.title}
-                            </h3>
-                            <p className="text-gray-400 text-sm mb-4 line-clamp-3">
-                                {project.description}
-                            </p>
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold mb-2 group-hover:text-data-accent transition-colors">
+                                    {project.title}
+                                </h3>
+                                <p className="text-gray-400 text-sm mb-4 line-clamp-3">
+                                    {project.description}
+                                </p>
 
-                            <div className="flex flex-wrap gap-2 mb-6">
-                                {project.tags.map((tag) => (
-                                    <span
-                                        key={tag}
-                                        className="text-xs px-2 py-1 bg-bio-accent/10 text-bio-accent rounded"
+                                <div className="flex flex-wrap gap-2 mb-6">
+                                    {project.tags.map((tag) => (
+                                        <span
+                                            key={tag}
+                                            className="text-xs px-2 py-1 bg-bio-accent/10 text-bio-accent rounded"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                <div className="flex items-center gap-4">
+                                    <a
+                                        href={project.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 text-sm text-white hover:text-data-accent transition-colors"
                                     >
-                                        {tag}
-                                    </span>
-                                ))}
+                                        <Github className="w-4 h-4" />
+                                        {t.projects.code}
+                                    </a>
+                                    {/* Add demo link if needed */}
+                                </div>
                             </div>
-
-                            <div className="flex items-center gap-4">
-                                <a
-                                    href={project.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-2 text-sm text-white hover:text-data-accent transition-colors"
-                                >
-                                    <Github className="w-4 h-4" />
-                                    {t.projects.code}
-                                </a>
-                                {/* Add demo link if needed */}
-                            </div>
-                        </div>
-                    </motion.div>
-                ))}
-            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            )}
         </div>
     );
 }

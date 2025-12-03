@@ -22,7 +22,8 @@ const translations = {
         hero: {
             projects: 'Voir mes projets',
             contact: 'Me contacter',
-            download: 'Télécharger mon CV'
+            download: 'Télécharger mon CV',
+            cvFile: 'remi_staelen_cv_fr.pdf'
         },
         skills: {
             title: 'Compétences Techniques'
@@ -35,7 +36,9 @@ const translations = {
         },
         projects: {
             title: 'Projets Récents',
-            code: 'Code'
+            code: 'Code',
+            fallback: 'Les projets seront ajoutés bientôt, voici mon',
+            github: 'GitHub'
         },
         interests: {
             title: 'Centres d\'Intérêt'
@@ -45,6 +48,7 @@ const translations = {
             email: 'Email',
             phone: 'Téléphone',
             location: 'Localisation',
+            socials: 'Réseaux Sociaux',
             form: {
                 name: 'Nom',
                 email: 'Email',
@@ -73,7 +77,8 @@ const translations = {
         hero: {
             projects: 'View my projects',
             contact: 'Contact me',
-            download: 'Download my CV'
+            download: 'Download my CV',
+            cvFile: 'remi_staelen_cv_en.pdf'
         },
         skills: {
             title: 'Technical Skills'
@@ -86,7 +91,9 @@ const translations = {
         },
         projects: {
             title: 'Recent Projects',
-            code: 'Code'
+            code: 'Code',
+            fallback: 'Projects will be added soon, here is my',
+            github: 'GitHub'
         },
         interests: {
             title: 'Interests'
@@ -96,6 +103,7 @@ const translations = {
             email: 'Email',
             phone: 'Phone',
             location: 'Location',
+            socials: 'Social Networks',
             form: {
                 name: 'Name',
                 email: 'Email',

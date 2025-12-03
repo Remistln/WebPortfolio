@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Menu, X, Dna, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-export default function Navbar({ language, setLanguage, t }) {
+export default function Navbar({ language, setLanguage, t, profile }) {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
@@ -37,7 +37,7 @@ export default function Navbar({ language, setLanguage, t }) {
                 <div className="flex items-center justify-between h-16">
                     <div className="flex-shrink-0 flex items-center gap-2">
                         <Dna className="h-8 w-8 text-bio-accent" />
-                        <span className="font-bold text-xl tracking-wider text-white">BIO<span className="text-data-accent">DATA</span></span>
+                        <span className="font-bold text-xl tracking-wider text-white">{profile?.basics?.name || "Rémi Staelen"}</span>
                     </div>
 
                     <div className="hidden md:block">
