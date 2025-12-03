@@ -36,7 +36,7 @@ export default function Navbar({ language, setLanguage, t, profile }) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex-shrink-0 flex items-center gap-2">
-                        <Dna className="h-8 w-8 text-bio-accent" />
+                        <img src="/rs_thick.png" alt="Logo" className="h-8 w-auto object-contain" />
                         <span className="font-bold text-xl tracking-wider text-white">{profile?.basics?.name || "Rémi Staelen"}</span>
                     </div>
 

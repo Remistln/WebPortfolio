@@ -25,16 +25,38 @@ export default function Skills({ skills, t }) {
                         className="bg-bio-dark border border-white/10 rounded-xl p-6 hover:border-bio-accent/50 transition-colors relative z-20"
                     >
                         <h3 className="text-xl font-semibold mb-6 text-bio-accent">{category.category}</h3>
-                        <div className="flex flex-wrap gap-2">
-                            {category.items.map((item) => (
-                                <span
-                                    key={item}
-                                    className="px-3 py-1 bg-white/5 text-sm text-gray-300 rounded-full border border-white/5 text-center flex-grow"
-                                >
-                                    {item}
-                                </span>
-                            ))}
-                        </div>
+                        {category.subgroups ? (
+                            <div className="space-y-6">
+                                {category.subgroups.map((subgroup) => (
+                                    <div key={subgroup.name}>
+                                        <h4 className="text-sm font-medium text-gray-400 mb-3 uppercase tracking-wider border-b border-white/5 pb-1">
+                                            {subgroup.name}
+                                        </h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            {subgroup.items.map((item) => (
+                                                <span
+                                                    key={item}
+                                                    className="px-3 py-1 bg-white/5 text-sm text-gray-300 rounded-full border border-white/5 text-center"
+                                                >
+                                                    {item}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            <div className="flex flex-wrap gap-2">
+                                {category.items.map((item) => (
+                                    <span
+                                        key={item}
+                                        className="px-3 py-1 bg-white/5 text-sm text-gray-300 rounded-full border border-white/5 text-center flex-grow"
+                                    >
+                                        {item}
+                                    </span>
+                                ))}
+                            </div>
+                        )}
                     </motion.div>
                 ))}
             </div>

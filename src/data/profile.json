@@ -116,76 +116,140 @@
                 "Conception et développement d'un module d'authentification sécurisé (Login/Register) en PHP natif couplé à une base de données MySQL",
                 "Sécurisation de l'application : implémentation du hachage de mots de passe et protection contre les injections SQL et failles XSS",
                 "Refactoring et optimisation du code (Clean Code) via la séparation de la logique métier et de l'affichage pour faciliter la maintenance",
-                "Mise en place des bonnes pratiques de développement : versionning avec Git/GitHub et respect du principe DRY",
+                "Mise en place des bonnes pratiques de développement : versioning avec Git/GitHub et respect du principe DRY",
                 "Intégration d'API tierces (SMS/Microsoft) et initiation aux services Cloud (AWS) et au framework Symfony"
             ]
         }
     ],
     "skills": [
         {
-            "category": "Données & Analyse",
-            "items": [
-                "Modélisation et gestion de bases de données relationnelles (Lambda, Kappa)",
-                "SQL (PostgreSQL, MySQL, Amazon Athena)",
-                "Python (Pandas, Scikit-Learn, PyTorch, BioPython, spaCy)",
-                "Traitement du Langage Naturel (NLP / NER)",
-                "Jupyter Notebook",
-                "Power BI",
-                "Amazon QuickSight",
-                "Excel / Google Sheets",
-                "XGBoost",
-                "LightGBM",
-                "Feature Engineering & Optimisation Bayésienne",
-                "Matplotlib",
-                "R"
+            "category": "Data Science & IA",
+            "subgroups": [
+                {
+                    "name": "Machine Learning",
+                    "items": [
+                        "XGBoost",
+                        "LightGBM",
+                        "Scikit-Learn",
+                        "PyTorch",
+                        "Optimisation Bayésienne"
+                    ]
+                },
+                {
+                    "name": "NLP",
+                    "items": [
+                        "Traitement du Langage Naturel",
+                        "SpaCy",
+                        "NER"
+                    ]
+                },
+                {
+                    "name": "Analyse & Viz",
+                    "items": [
+                        "Python (Pandas, NumPy)",
+                        "Power BI",
+                        "QuickSight",
+                        "Excel"
+                    ]
+                }
             ]
         },
         {
-            "category": "Développement Web & Back-end",
-            "items": [
-                "PHP (Symfony, API Platform, Natif)",
-                "ReactJS (Développement Frontend)",
-                "HTML / JavaScript",
-                "Sécurité Web (Hashage, prévention XSS/SQLi)"
+            "category": "Data Engineering & Cloud",
+            "subgroups": [
+                {
+                    "name": "Cloud Platforms",
+                    "items": [
+                        "AWS (Lambda, S3, Athena)",
+                        "Azure (ML, Foundry)",
+                        "Microsoft Fabric"
+                    ]
+                },
+                {
+                    "name": "Bases de Données",
+                    "items": [
+                        "SQL (PostgreSQL, MySQL)",
+                        "Data Lakehouse",
+                        "Modélisation (Lambda/Kappa)"
+                    ]
+                },
+                {
+                    "name": "DevOps & Outils",
+                    "items": [
+                        "Terraform (IaC)",
+                        "CI/CD",
+                        "Git/GitHub",
+                        "Docker"
+                    ]
+                }
             ]
         },
         {
-            "category": "Cloud & MLOps",
-            "items": [
-                "AWS (Lambda, S3, Athena, QuickSight, SageMaker, EC2)",
-                "Azure (Azure Machine Learning, Azure Foundry, Blob Storage)",
-                "Microsoft Fabric (Data Factory, Dataflow, Warehouse, Lakehouse)",
-                "Infrastructure as Code (Terraform)",
-                "Architecture Serverless",
-                "CI/CD & Pipelines automatisés"
+            "category": "Bio-Informatique",
+            "subgroups": [
+                {
+                    "name": "Outils & Librairies",
+                    "items": [
+                        "BioPython",
+                        "R (Bioconductor)"
+                    ]
+                },
+                {
+                    "name": "Domaines",
+                    "items": [
+                        "Génomique",
+                        "Biostatistiques",
+                        "Biologie Moléculaire"
+                    ]
+                }
             ]
         },
         {
-            "category": "Outils de Développement",
-            "items": [
-                "VS Code",
-                "Webstorm",
-                "Git / GitHub / GitLab (Versioning & Actions)",
-                "Postman (Tests API)",
-                "Odoo (Intégration API & ERP)",
-                "DBeaver"
+            "category": "Développement Web",
+            "subgroups": [
+                {
+                    "name": "Backend",
+                    "items": [
+                        "PHP (Symfony, API Platform)",
+                        "Python (FastAPI)"
+                    ]
+                },
+                {
+                    "name": "Frontend",
+                    "items": [
+                        "ReactJS",
+                        "HTML/CSS",
+                        "Tailwind CSS"
+                    ]
+                },
+                {
+                    "name": "Sécurité",
+                    "items": [
+                        "Hashage",
+                        "Prévention XSS/SQLi"
+                    ]
+                }
             ]
         },
         {
-            "category": "Gestion de Projet & Méthodologies",
-            "items": [
-                "Méthode Agile & Kanban (Trello)",
-                "Clean Code & Refactoring (DRY)",
-                "Gestion des risques (Matrice & Analyse)",
-                "Matrice RACI",
-                "Conduite du changement (Méthode ADKAR)"
-            ]
-        },
-        {
-            "category": "Langues",
-            "items": [
-                "Français : Natif",
-                "Anglais : C1"
+            "category": "Soft Skills & Gestion",
+            "subgroups": [
+                {
+                    "name": "Gestion de Projet",
+                    "items": [
+                        "Agile & Kanban",
+                        "Matrice RACI",
+                        "Gestion des risques",
+                        "Conduite du changement"
+                    ]
+                },
+                {
+                    "name": "Langues",
+                    "items": [
+                        "Français (Natif)",
+                        "Anglais (C1)"
+                    ]
+                }
             ]
         }
     ],

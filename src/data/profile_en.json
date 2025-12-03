@@ -123,69 +123,133 @@
     ],
     "skills": [
         {
-            "category": "Data & Analysis",
-            "items": [
-                "Relational Database Modeling and Management (Lambda, Kappa)",
-                "SQL (PostgreSQL, MySQL, Amazon Athena)",
-                "Python (Pandas, Scikit-Learn, PyTorch, BioPython, spaCy)",
-                "Natural Language Processing (NLP / NER)",
-                "Jupyter Notebook",
-                "Power BI",
-                "Amazon QuickSight",
-                "Excel / Google Sheets",
-                "XGBoost",
-                "LightGBM",
-                "Feature Engineering & Bayesian Optimization",
-                "Matplotlib",
-                "R"
+            "category": "Data Science & AI",
+            "subgroups": [
+                {
+                    "name": "Machine Learning",
+                    "items": [
+                        "XGBoost",
+                        "LightGBM",
+                        "Scikit-Learn",
+                        "PyTorch",
+                        "Bayesian Optimization"
+                    ]
+                },
+                {
+                    "name": "NLP",
+                    "items": [
+                        "Natural Language Processing",
+                        "SpaCy",
+                        "NER"
+                    ]
+                },
+                {
+                    "name": "Analysis & Viz",
+                    "items": [
+                        "Python (Pandas, NumPy)",
+                        "Power BI",
+                        "QuickSight",
+                        "Excel"
+                    ]
+                }
             ]
         },
         {
-            "category": "Web & Back-end Development",
-            "items": [
-                "PHP (Symfony, API Platform, Native)",
-                "ReactJS (Frontend Development)",
-                "HTML / JavaScript",
-                "Web Security (Hashing, XSS/SQLi prevention)"
+            "category": "Data Engineering & Cloud",
+            "subgroups": [
+                {
+                    "name": "Cloud Platforms",
+                    "items": [
+                        "AWS (Lambda, S3, Athena)",
+                        "Azure (ML, Foundry)",
+                        "Microsoft Fabric"
+                    ]
+                },
+                {
+                    "name": "Databases",
+                    "items": [
+                        "SQL (PostgreSQL, MySQL)",
+                        "Data Lakehouse",
+                        "Modeling (Lambda/Kappa)"
+                    ]
+                },
+                {
+                    "name": "DevOps & Tools",
+                    "items": [
+                        "Terraform (IaC)",
+                        "CI/CD",
+                        "Git/GitHub",
+                        "Docker"
+                    ]
+                }
             ]
         },
         {
-            "category": "Cloud & MLOps",
-            "items": [
-                "AWS (Lambda, S3, Athena, QuickSight, SageMaker, EC2)",
-                "Azure (Azure Machine Learning, Azure Foundry, Blob Storage)",
-                "Microsoft Fabric (Data Factory, Dataflow, Warehouse, Lakehouse)",
-                "Infrastructure as Code (Terraform)",
-                "Serverless Architecture",
-                "CI/CD & Automated Pipelines"
+            "category": "Bioinformatics",
+            "subgroups": [
+                {
+                    "name": "Tools & Libraries",
+                    "items": [
+                        "BioPython",
+                        "R (Bioconductor)"
+                    ]
+                },
+                {
+                    "name": "Domains",
+                    "items": [
+                        "Genomics",
+                        "Biostatistics",
+                        "Molecular Biology"
+                    ]
+                }
             ]
         },
         {
-            "category": "Development Tools",
-            "items": [
-                "VS Code",
-                "Webstorm",
-                "Git / GitHub / GitLab (Versioning & Actions)",
-                "Postman (API Testing)",
-                "Odoo (API & ERP Integration)",
-                "DBeaver"
+            "category": "Web Development",
+            "subgroups": [
+                {
+                    "name": "Backend",
+                    "items": [
+                        "PHP (Symfony, API Platform)",
+                        "Python (FastAPI)"
+                    ]
+                },
+                {
+                    "name": "Frontend",
+                    "items": [
+                        "ReactJS",
+                        "HTML/CSS",
+                        "Tailwind CSS"
+                    ]
+                },
+                {
+                    "name": "Security",
+                    "items": [
+                        "Hashing",
+                        "XSS/SQLi Prevention"
+                    ]
+                }
             ]
         },
         {
-            "category": "Project Management & Methodologies",
-            "items": [
-                "Agile & Kanban Method (Trello)",
-                "Clean Code & Refactoring (DRY)",
-                "Risk Management (Matrix & Analysis)",
-                "RACI Matrix",
-                "Change Management (ADKAR Method)"
-            ]
-        },
-        {
-            "category": "Languages",
-            "items": [
-                "French: Native",
-                "English: C1"
+            "category": "Soft Skills & Management",
+            "subgroups": [
+                {
+                    "name": "Project Management",
+                    "items": [
+                        "Agile & Kanban",
+                        "RACI Matrix",
+                        "Risk Management",
+                        "Change Management"
+                    ]
+                },
+                {
+                    "name": "Languages",
+                    "items": [
+                        "French (Native)",
+                        "English (C1)"
+                    ]
+                }
             ]
         }
     ],

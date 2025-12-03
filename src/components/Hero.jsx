@@ -23,14 +23,34 @@ export default function Hero({ profile, t }) {
                     <Database className="w-5 h-5 text-data-accent" />
                 </motion.div>
 
-                <motion.h1
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400"
+                    className="mb-6"
                 >
-                    {profile.basics.name}
-                </motion.h1>
+                    {/* Internal style to bypass Tailwind JIT issues */}
+                    <style>{`
+                        .custom-initial-img {
+                            height: 40px;
+                        }
+                        @media (min-width: 768px) {
+                            .custom-initial-img {
+                                height: 82px;
+                            }
+                        }
+                    `}</style>
+                    <h1 className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2">
+                        <span className="flex items-baseline">
+                            <img src="/r_thick.png" alt="R" className="custom-initial-img w-auto object-contain" />
+                            <span className="text-5xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400">émi</span>
+                        </span>
+                        <span className="flex items-baseline">
+                            <img src="/s.png" alt="S" className="custom-initial-img w-auto object-contain" />
+                            <span className="text-5xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400">taelen</span>
+                        </span>
+                    </h1>
+                </motion.div>
 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
