@@ -43,11 +43,11 @@ export default function Hero({ profile, t }) {
                     <h1 className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2">
                         <span className="flex items-baseline">
                             <img src="/r_thick.png" alt="R" className="custom-initial-img w-auto object-contain" />
-                            <span className="text-5xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400">émi</span>
+                            <span className="text-5xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-white">émi</span>
                         </span>
                         <span className="flex items-baseline">
                             <img src="/s.png" alt="S" className="custom-initial-img w-auto object-contain" />
-                            <span className="text-5xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400">taelen</span>
+                            <span className="text-5xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-white">taelen</span>
                         </span>
                     </h1>
                 </motion.div>
