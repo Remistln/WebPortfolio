@@ -19,7 +19,7 @@ export default function Hero({ profile, t }) {
                     className="mb-8 p-3 bg-bio-dark rounded-full border border-white/10 inline-flex items-center gap-2 relative z-20"
                 >
                     <Dna className="w-5 h-5 text-bio-accent" />
-                    <span className="text-sm text-gray-300">Bioinformatics & Data Science</span>
+                    <span className="text-sm text-gray-300">Biology & Data Science</span>
                     <Database className="w-5 h-5 text-data-accent" />
                 </motion.div>
 
@@ -70,25 +70,8 @@ export default function Hero({ profile, t }) {
                     {profile.basics.summary}
                 </motion.p>
 
-                {profile.objective && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.35 }}
-                        className="mb-10 bg-bio-dark border border-white/10 rounded-xl p-6 max-w-2xl w-full relative z-20"
-                    >
-                        <h3 className="text-lg font-semibold text-white mb-2">{profile.objective.title}</h3>
-                        <p className="text-data-accent font-medium mb-1">{profile.objective.role}</p>
-                        <div className="text-sm text-gray-400 flex flex-col sm:flex-row gap-4 justify-center">
-                            <span>{profile.objective.duration}</span>
-                            <span className="hidden sm:inline">•</span>
-                            <span>{profile.objective.availability}</span>
-                        </div>
-                        {profile.objective.note && (
-                            <p className="text-xs text-gray-500 mt-2 italic">{profile.objective.note}</p>
-                        )}
-                    </motion.div>
-                )}
+                {/* Objective section removed - moved to InternshipNotification */}
+
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

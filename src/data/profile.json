@@ -1,12 +1,12 @@
 {
     "basics": {
         "name": "Rémi Staelen",
-        "label": "Data Engineer & Data Scientist",
+        "label": "Étudiant en Master : Data Management in Biosciences",
         "image": "",
         "email": "remistpro@gmail.com",
         "phone": "06 28 47 65 89",
         "url": "",
-        "summary": "Étudiant en Master Data Management in Biosciences, titulaire d'un Bac+5 en data/IA, avec trois ans d'alternance et deux stages dans le domaine. Intérêt marqué pour l'analyse de données appliquée à la biologie et volonté d'évoluer dans des environnements où ces compétences créent une valeur réelle.",
+        "summary": "Également titulaire d'un Bac+5 Chef de projet expert IA, avec trois ans d'alternance et deux stages dans le domaine de la data (Data Engineer, Data Analyst, Data Scientist). J'ai un intérêt marqué pour le monde de la data appliquée notamment à la biologie et je veux évoluer dans des environnements où ces compétences créent une valeur réelle.",
         "location": {
             "city": "Villeneuve-d'Ascq",
             "country": "France",
@@ -18,7 +18,7 @@
         "title": "Recherche de Stage",
         "role": "Data Analyse / Data Engineering / Data Science en santé",
         "duration": "2 à 5 mois",
-        "availability": "Dès début avril 2026",
+        "availability": "Dès le 30 mars 2026",
         "note": "Possibilité d'alternance en seconde année dès septembre 2026"
     },
     "education": [
@@ -128,17 +128,16 @@
                 {
                     "name": "Machine Learning",
                     "items": [
-                        "XGBoost",
-                        "LightGBM",
                         "Scikit-Learn",
                         "PyTorch",
+                        "XGBoost",
+                        "LightGBM",
                         "Optimisation Bayésienne"
                     ]
                 },
                 {
                     "name": "NLP",
                     "items": [
-                        "Traitement du Langage Naturel",
                         "SpaCy",
                         "NER"
                     ]
@@ -160,16 +159,18 @@
                 {
                     "name": "Cloud Platforms",
                     "items": [
-                        "AWS (Lambda, S3, Athena)",
-                        "Azure (ML, Foundry)",
-                        "Microsoft Fabric"
+                        "Mise en place d'unfrastructure cloud",
+                        "AWS (Lambda, S3, Athena, RDS, VPC, IAM, SNS, SQS, CloudWatch)",
+                        "Azure (ML, Foundry, Data Factory, Blob storage, Key Vault)",
+                        "Microsoft Fabric (Dataflows, Power BI, Lakehouse)"
                     ]
                 },
                 {
                     "name": "Bases de Données",
                     "items": [
                         "SQL (PostgreSQL, MySQL)",
-                        "Data Lakehouse",
+                        "Data Lake",
+                        "Data Warehouse",
                         "Modélisation (Lambda/Kappa)"
                     ]
                 },
@@ -178,7 +179,7 @@
                     "items": [
                         "Terraform (IaC)",
                         "CI/CD",
-                        "Git/GitHub",
+                        "Git/GitHub (Actions)",
                         "Docker"
                     ]
                 }
@@ -191,7 +192,7 @@
                     "name": "Outils & Librairies",
                     "items": [
                         "BioPython",
-                        "R (Bioconductor)"
+                        "R"
                     ]
                 },
                 {
@@ -205,42 +206,26 @@
             ]
         },
         {
-            "category": "Développement Web",
-            "subgroups": [
-                {
-                    "name": "Backend",
-                    "items": [
-                        "PHP (Symfony, API Platform)",
-                        "Python (FastAPI)"
-                    ]
-                },
-                {
-                    "name": "Frontend",
-                    "items": [
-                        "ReactJS",
-                        "HTML/CSS",
-                        "Tailwind CSS"
-                    ]
-                },
-                {
-                    "name": "Sécurité",
-                    "items": [
-                        "Hashage",
-                        "Prévention XSS/SQLi"
-                    ]
-                }
-            ]
-        },
-        {
             "category": "Soft Skills & Gestion",
             "subgroups": [
                 {
                     "name": "Gestion de Projet",
                     "items": [
-                        "Agile & Kanban",
-                        "Matrice RACI",
-                        "Gestion des risques",
-                        "Conduite du changement"
+                        "Gestion des ressources",
+                        "Analyse et Gestion des risques",
+                        "Conduite du changement",
+                        "Cahier des charges",
+                        "Note de faisabilité",
+                        "Note de besoin"
+                    ]
+                },
+                {
+                    "name": "Soft Skills",
+                    "items": [
+                        "Autonomie (apprentissage et execution)",
+                        "Travail d'équipe (collaboration et communication)",
+                        "Adaptabilité",
+                        "Compréhension des besoins"
                     ]
                 },
                 {

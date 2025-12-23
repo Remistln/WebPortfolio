@@ -4,10 +4,13 @@ import Footer from './Footer';
 import DNABackground from './DNABackground';
 import profile from '@/data/profile.json';
 
+import InternshipNotification from './InternshipNotification';
+
 export default function Layout({ children, language, setLanguage, t, profile }) {
     return (
         <div className="min-h-screen bg-bio-dark text-slate-50 font-sans selection:bg-bio-accent/30 relative overflow-x-hidden">
             <DNABackground />
+            <InternshipNotification profile={profile} />
             <div className="relative z-20">
                 <Navbar language={language} setLanguage={setLanguage} t={t} profile={profile} />
                 <main className="flex-grow">

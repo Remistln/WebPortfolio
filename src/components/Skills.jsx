@@ -14,7 +14,7 @@ export default function Skills({ skills, t }) {
                 <div className="w-20 h-1 bg-bio-accent md:mx-0 mx-auto rounded-full" />
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="columns-1 md:columns-2 gap-6 space-y-6">
                 {skills.map((category, idx) => (
                     <motion.div
                         key={category.category}
@@ -22,7 +22,7 @@ export default function Skills({ skills, t }) {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.1 }}
-                        className="bg-bio-dark border border-white/10 rounded-xl p-6 hover:border-bio-accent/50 transition-colors relative z-20"
+                        className="bg-bio-dark border border-white/10 rounded-xl p-6 hover:border-bio-accent/50 transition-colors relative z-20 break-inside-avoid"
                     >
                         <h3 className="text-xl font-semibold mb-6 text-bio-accent">{category.category}</h3>
                         {category.subgroups ? (

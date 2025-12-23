@@ -1,12 +1,12 @@
 {
     "basics": {
         "name": "Rémi Staelen",
-        "label": "Data Engineer & Data Scientist",
+        "label": "Master's Student: Data Management in Biosciences",
         "image": "",
         "email": "remistpro@gmail.com",
         "phone": "06 28 47 65 89",
         "url": "",
-        "summary": "Master's student in Data Management in Biosciences, holding a Master's degree in Data/AI, with three years of work-study experience and two internships in the field. Strong interest in data analysis applied to biology and eager to evolve in environments where these skills create real value.",
+        "summary": "Also holding a Master's degree (Bac+5) in AI Project Management, with three years of work-study experience and two internships in the data field (Data Engineer, Data Analyst, Data Scientist). I have a strong interest in the world of data applied particularly to biology and I want to evolve in environments where these skills create real value.",
         "location": {
             "city": "Villeneuve-d'Ascq",
             "country": "France",
@@ -18,7 +18,7 @@
         "title": "Looking for Internship",
         "role": "Data Analyst / Data Engineer / Data Scientist in Health",
         "duration": "2 to 5 months",
-        "availability": "From early April 2026",
+        "availability": "From March 30, 2026",
         "note": "Possibility of work-study for the second year starting September 2026"
     },
     "education": [
@@ -128,17 +128,16 @@
                 {
                     "name": "Machine Learning",
                     "items": [
-                        "XGBoost",
-                        "LightGBM",
                         "Scikit-Learn",
                         "PyTorch",
+                        "XGBoost",
+                        "LightGBM",
                         "Bayesian Optimization"
                     ]
                 },
                 {
                     "name": "NLP",
                     "items": [
-                        "Natural Language Processing",
                         "SpaCy",
                         "NER"
                     ]
@@ -160,16 +159,18 @@
                 {
                     "name": "Cloud Platforms",
                     "items": [
-                        "AWS (Lambda, S3, Athena)",
-                        "Azure (ML, Foundry)",
-                        "Microsoft Fabric"
+                        "Cloud Infrastructure Implementation",
+                        "AWS (Lambda, S3, Athena, RDS, VPC, IAM, SNS, SQS, CloudWatch)",
+                        "Azure (ML, Foundry, Data Factory, Blob storage, Key Vault)",
+                        "Microsoft Fabric (Dataflows, Power BI, Lakehouse)"
                     ]
                 },
                 {
                     "name": "Databases",
                     "items": [
                         "SQL (PostgreSQL, MySQL)",
-                        "Data Lakehouse",
+                        "Data Lake",
+                        "Data Warehouse",
                         "Modeling (Lambda/Kappa)"
                     ]
                 },
@@ -178,7 +179,7 @@
                     "items": [
                         "Terraform (IaC)",
                         "CI/CD",
-                        "Git/GitHub",
+                        "Git/GitHub (Actions)",
                         "Docker"
                     ]
                 }
@@ -191,7 +192,7 @@
                     "name": "Tools & Libraries",
                     "items": [
                         "BioPython",
-                        "R (Bioconductor)"
+                        "R"
                     ]
                 },
                 {
@@ -205,42 +206,26 @@
             ]
         },
         {
-            "category": "Web Development",
-            "subgroups": [
-                {
-                    "name": "Backend",
-                    "items": [
-                        "PHP (Symfony, API Platform)",
-                        "Python (FastAPI)"
-                    ]
-                },
-                {
-                    "name": "Frontend",
-                    "items": [
-                        "ReactJS",
-                        "HTML/CSS",
-                        "Tailwind CSS"
-                    ]
-                },
-                {
-                    "name": "Security",
-                    "items": [
-                        "Hashing",
-                        "XSS/SQLi Prevention"
-                    ]
-                }
-            ]
-        },
-        {
             "category": "Soft Skills & Management",
             "subgroups": [
                 {
                     "name": "Project Management",
                     "items": [
-                        "Agile & Kanban",
-                        "RACI Matrix",
-                        "Risk Management",
-                        "Change Management"
+                        "Resource Management",
+                        "Risk Analysis and Management",
+                        "Change Management",
+                        "Specifications",
+                        "Feasibility Study",
+                        "Needs Assessment"
+                    ]
+                },
+                {
+                    "name": "Soft Skills",
+                    "items": [
+                        "Autonomy (learning and execution)",
+                        "Teamwork (collaboration and communication)",
+                        "Adaptability",
+                        "Understanding Needs"
                     ]
                 },
                 {
