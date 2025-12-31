@@ -260,5 +260,70 @@
             "description": "Passionné de sport automobile"
         }
     ],
-    "projects": []
+    "projects": [
+        {
+            "title": "NeuroSift",
+            "subtitle": "Pipeline de Classification d'IRM (End-to-End)",
+            "image": "/images/projects/neurosift/app.png",
+            "url": "https://github.com/Remistln/Neurosift",
+            "description": "Développement d'une chaîne de traitement complète pour l'analyse d'imagerie médicale par Deep Learning. Simulation d'un pipeline d'aide au diagnostic.",
+            "longDescription": "NeuroSift est un projet personnel conçu pour simuler un environnement de production clinique réel. Dans le flux de travail radiologique, le tri manuel des séquences IRM (T1, T2, FLAIR) est une tâche répétitive. Ce projet automatise cette classification en amont du diagnostic, permettant aux praticiens de se concentrer sur l'analyse pathologique. L'objectif était de construire une infrastructure 'bout-en-bout', depuis l'ingestion de données brutes (cohorte UPENN-GBM) jusqu'au déploiement d'une interface d'aide à la décision.",
+            "tags": [
+                "Deep Learning",
+                "PyTorch",
+                "Computer Vision",
+                "Docker",
+                "Medical Imaging"
+            ],
+            "steps": [
+                {
+                    "title": "1. Ingestion & Data Engineering",
+                    "content": "Connexion à l'API du TCIA pour l'extraction de cohortes de Glioblastomes (UPENN-GBM). Gestion des formats DICOM natifs et extraction des métadonnées (Séries UID)."
+                },
+                {
+                    "title": "2. Pre-processing Médical",
+                    "content": "Standardisation pour les réseaux de neurones : Application de fenêtres de contraste tissulaires (Brain Window) et normalisation des pixels pour stabiliser l'apprentissage."
+                },
+                {
+                    "title": "3. Modélisation (Deep Learning)",
+                    "content": "Architecture ResNet18 en Transfer Learning (ImageNet). Validation rigoureuse avec séparation par patient (Patient-Level Split) pour éviter le data leakage. 99.3% d'accuracy."
+                },
+                {
+                    "title": "4. Déploiement MLOps",
+                    "content": "Containerisation Docker Compose. App Streamlit pour l'interface, MinIO pour le stockage S3, PostgreSQL pour les métadonnées et MLflow pour le suivi des expériences."
+                }
+            ],
+            "challenges": [
+                {
+                    "title": "Le Biais du Contraste (Ambiguïté Sémantique)",
+                    "content": "Une série T1 avec injection de Gadolinium classée incorrectement comme FLAIR (Confiance > 99%). Le modèle a appris l'hyper-intensité (blanche) comme signature du FLAIR, manquant le contexte du protocole d'acquisition."
+                },
+                {
+                    "title": "Dérive de Distribution (Edge Case)",
+                    "content": "Chute de performance (Confiance ~50%) sur les coupes orbitaires (base du crâne). Ces zones contiennent des structures (yeux, sinus) sous-représentées dans le dataset centré sur le cerveau, illustrant un cas d'Out-of-Distribution."
+                }
+            ],
+            "stack": {
+                "Framework": "PyTorch, Torchvision",
+                "Computer Vision": "OpenCV, Pydicom",
+                "Data Engineering": "Pandas, SQLAlchemy",
+                "Infrastructure": "Docker, MinIO, PostgreSQL, MLflow",
+                "Interface": "Streamlit"
+            },
+            "gallery": [
+                {
+                    "src": "/images/projects/neurosift/app.png",
+                    "caption": "Interface NeuroSift : Analyse en temps réel d'une séquence T1"
+                },
+                {
+                    "src": "/images/projects/neurosift/prediction.png",
+                    "caption": "Visualisation de la prédiction et des régions d'intérêt"
+                },
+                {
+                    "src": "/images/projects/neurosift/confusion_matrix.png",
+                    "caption": "Matrice de confusion : Validation des performances sur le jeu de test"
+                }
+            ]
+        }
+    ]
 }

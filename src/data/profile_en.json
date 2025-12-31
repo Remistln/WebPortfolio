@@ -260,5 +260,70 @@
             "description": "Motorsport enthusiast"
         }
     ],
-    "projects": []
+    "projects": [
+        {
+            "title": "NeuroSift",
+            "subtitle": "MRI Classification Pipeline (End-to-End)",
+            "image": "/images/projects/neurosift/app.png",
+            "url": "https://github.com/Remistln/Neurosift",
+            "description": "Development of a complete processing chain for medical image analysis using Deep Learning. Simulation of a diagnostic aid pipeline.",
+            "longDescription": "NeuroSift is a personal project designed to simulate a real clinical production environment. In radiological workflows, sorting MRI sequences (T1, T2, FLAIR) is a repetitive task. This project automates classification upstream of diagnosis, allowing practitioners to focus on pathological analysis. The goal was to build an 'end-to-end' infrastructure, from raw data ingestion (UPENN-GBM cohort) to the deployment of a decision support interface.",
+            "tags": [
+                "Deep Learning",
+                "PyTorch",
+                "Computer Vision",
+                "Docker",
+                "Medical Imaging"
+            ],
+            "steps": [
+                {
+                    "title": "1. Ingestion & Data Engineering",
+                    "content": "Connection to TCIA API for extracting Glioblastoma cohorts (UPENN-GBM). Handling native DICOM formats and extracting metadata (Series UID)."
+                },
+                {
+                    "title": "2. Medical Pre-processing",
+                    "content": "Standardization for neural networks: Application of tissue-specific contrast windows (Brain Window) and pixel normalization to stabilize learning."
+                },
+                {
+                    "title": "3. Modeling (Deep Learning)",
+                    "content": "ResNet18 architecture using Transfer Learning (ImageNet). Rigorous validation with Patient-Level Split to prevent data leakage. 99.3% accuracy."
+                },
+                {
+                    "title": "4. MLOps Deployment",
+                    "content": "Docker Compose containerization. Streamlit App for interface, MinIO for S3 storage, PostgreSQL for metadata, and MLflow for experiment tracking."
+                }
+            ],
+            "challenges": [
+                {
+                    "title": "Contrast Bias (Semantic Ambiguity)",
+                    "content": "A T1 series with Gadolinium injection incorrectly classified as FLAIR (Confidence > 99%). The model learned hyper-intensity (white) as a FLAIR signature, missing the acquisition protocol context."
+                },
+                {
+                    "title": "Distribution Drift (Edge Case)",
+                    "content": "Performance drop (Confidence ~50%) on orbital cuts (skull base). These areas contain structures (eyes, sinuses) under-represented in the brain-centered dataset, illustrating an Out-of-Distribution case."
+                }
+            ],
+            "stack": {
+                "Framework": "PyTorch, Torchvision",
+                "Computer Vision": "OpenCV, Pydicom",
+                "Data Engineering": "Pandas, SQLAlchemy",
+                "Infrastructure": "Docker, MinIO, PostgreSQL, MLflow",
+                "Interface": "Streamlit"
+            },
+            "gallery": [
+                {
+                    "src": "/images/projects/neurosift/app.png",
+                    "caption": "NeuroSift Interface: Real-time analysis of a T1 sequence"
+                },
+                {
+                    "src": "/images/projects/neurosift/prediction.png",
+                    "caption": "Prediction overview and region of interest"
+                },
+                {
+                    "src": "/images/projects/neurosift/confusion_matrix.png",
+                    "caption": "Confusion Matrix: Performance validation on test set"
+                }
+            ]
+        }
+    ]
 }

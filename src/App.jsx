@@ -37,6 +37,7 @@ const translations = {
         projects: {
             title: 'Projets Récents',
             code: 'Code',
+            gallery: 'Galerie',
             fallback: 'Les projets seront ajoutés bientôt, voici mon',
             github: 'GitHub'
         },
@@ -92,6 +93,7 @@ const translations = {
         projects: {
             title: 'Recent Projects',
             code: 'Code',
+            gallery: 'Gallery',
             fallback: 'Projects will be added soon, here is my',
             github: 'GitHub'
         },
