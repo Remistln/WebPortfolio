@@ -267,7 +267,7 @@
             "image": "/images/projects/neurosift/app.png",
             "url": "https://github.com/Remistln/Neurosift",
             "description": "Development of a complete processing chain for medical image analysis using Deep Learning. Simulation of a diagnostic aid pipeline.",
-            "longDescription": "NeuroSift is a personal project designed to simulate a real clinical production environment. In radiological workflows, sorting MRI sequences (T1, T2, FLAIR) is a repetitive task. This project automates classification upstream of diagnosis, allowing practitioners to focus on pathological analysis. The goal was to build an 'end-to-end' infrastructure, from raw data ingestion (UPENN-GBM cohort) to the deployment of a decision support interface.",
+            "longDescription": "In daily radiological workflows, the manual sorting of MRI sequences (T1, T2, FLAIR) is a time-consuming and repetitive task, yet essential prior to any diagnosis. NeuroSift aims to automate this upstream 'triage' step, allowing practitioners to dedicate their expertise to pathological analysis rather than data management. The major technical objective was to design a realistic 'end-to-end' infrastructure capable of simulating a clinical production environment. The pipeline thus manages the complete lifecycle of medical data: from the automated ingestion of complex cohorts (Glioblastoma) and DICOM metadata cleaning, to advanced pre-processing normalizing inter-machine variabilities, finally delivering reliable predictions via an ergonomic radiologist interface.",
             "tags": [
                 "Deep Learning",
                 "PyTorch",
@@ -278,19 +278,19 @@
             "steps": [
                 {
                     "title": "1. Ingestion & Data Engineering",
-                    "content": "Connection to TCIA API for extracting Glioblastoma cohorts (UPENN-GBM). Handling native DICOM formats and extracting metadata (Series UID)."
+                    "content": "Development of an automated extraction pipeline via the TCIA API to dynamically retrieve the UPENN-GBM cohort. The system parses the often chaotic native DICOM tree to structure a clean, hierarchical local Data Lake (Patient > Study > Series)."
                 },
                 {
-                    "title": "2. Medical Pre-processing",
-                    "content": "Standardization for neural networks: Application of tissue-specific contrast windows (Brain Window) and pixel normalization to stabilize learning."
+                    "title": "2. Advanced Medical Pre-processing",
+                    "content": "Handling raw data unsuitable for classic CNNs. I implemented 16-bit reading via Pydicom followed by Adaptive Percentile Normalization (1-99%) to harmonize contrasts between different MRI machines, before final conversion to standardized 8-bit format."
                 },
                 {
                     "title": "3. Modeling (Deep Learning)",
-                    "content": "ResNet18 architecture using Transfer Learning (ImageNet). Rigorous validation with Patient-Level Split to prevent data leakage. 99.3% accuracy."
+                    "content": "Adoption of a Transfer Learning strategy on a ResNet18 architecture to overcome 'Small Data' limitations. Training uses Adam optimizer and Cross-Entropy Loss, validated by a strict 'Patient-Level Split' to ensure the model generalizes to new anatomies without memorization."
                 },
                 {
-                    "title": "4. MLOps Deployment",
-                    "content": "Docker Compose containerization. Streamlit App for interface, MinIO for S3 storage, PostgreSQL for metadata, and MLflow for experiment tracking."
+                    "title": "4. Infrastructure & MLOps",
+                    "content": "Design of a 'Cloud-Ready' Micro-services architecture orchestrated by Docker Compose. The system includes decoupled image storage via MinIO (S3-compatible), a PostgreSQL database for metadata, and an interactive Streamlit interface for the clinician."
                 }
             ],
             "challenges": [

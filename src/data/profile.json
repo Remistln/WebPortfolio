@@ -267,7 +267,7 @@
             "image": "/images/projects/neurosift/app.png",
             "url": "https://github.com/Remistln/Neurosift",
             "description": "Développement d'une chaîne de traitement complète pour l'analyse d'imagerie médicale par Deep Learning. Simulation d'un pipeline d'aide au diagnostic.",
-            "longDescription": "NeuroSift est un projet personnel conçu pour simuler un environnement de production clinique réel. Dans le flux de travail radiologique, le tri manuel des séquences IRM (T1, T2, FLAIR) est une tâche répétitive. Ce projet automatise cette classification en amont du diagnostic, permettant aux praticiens de se concentrer sur l'analyse pathologique. L'objectif était de construire une infrastructure 'bout-en-bout', depuis l'ingestion de données brutes (cohorte UPENN-GBM) jusqu'au déploiement d'une interface d'aide à la décision.",
+            "longDescription": "Dans le flux de travail radiologique quotidien, le tri manuel des séquences IRM (T1, T2, FLAIR) est une tâche chronophage et répétitive, pourtant indispensable avant tout diagnostic. NeuroSift vise à automatiser cette étape de 'triage' en amont, permettant aux praticiens de dédier leur expertise à l'analyse pathologique plutôt qu'à la gestion de données. L'objectif technique majeur était de concevoir une infrastructure 'bout-en-bout' réaliste, capable de simuler un environnement de production clinique. Le pipeline gère ainsi le cycle de vie complet de la donnée médicale : depuis l'ingestion automatisée de cohortes complexes (Glioblastomes) et le nettoyage de métadonnées DICOM, jusqu'au pré-traitement avancé normalisant les variabilités inter-machines, pour finalement servir des prédictions fiables via une interface radiologue ergonomique.",
             "tags": [
                 "Deep Learning",
                 "PyTorch",
@@ -278,19 +278,19 @@
             "steps": [
                 {
                     "title": "1. Ingestion & Data Engineering",
-                    "content": "Connexion à l'API du TCIA pour l'extraction de cohortes de Glioblastomes (UPENN-GBM). Gestion des formats DICOM natifs et extraction des métadonnées (Séries UID)."
+                    "content": "Développement d'un pipeline d'extraction automatisé via l'API TCIA pour récupérer dynamiquement la cohorte UPENN-GBM. Le système parse ensuite l'arborescence DICOM native souvent chaotique pour structurer un Data Lake local propre et hiérarchisé (Patient > Étude > Série)."
                 },
                 {
-                    "title": "2. Pre-processing Médical",
-                    "content": "Standardisation pour les réseaux de neurones : Application de fenêtres de contraste tissulaires (Brain Window) et normalisation des pixels pour stabiliser l'apprentissage."
+                    "title": "2. Pre-processing Médical Avancé",
+                    "content": "Traitement des données brutes inexploitables par les CNN classiques. J'ai implémenté une lecture 16-bit via Pydicom suivie d'une Normalisation Adaptative par Percentiles (1-99%) pour harmoniser les contrastes entre différentes machines IRM, avant la conversion finale en format standardisé 8-bit."
                 },
                 {
                     "title": "3. Modélisation (Deep Learning)",
-                    "content": "Architecture ResNet18 en Transfer Learning (ImageNet). Validation rigoureuse avec séparation par patient (Patient-Level Split) pour éviter le data leakage. 99.3% d'accuracy."
+                    "content": "Adoption d'une stratégie de Transfer Learning sur une architecture ResNet18 pour pallier la limitation du 'Small Data'. L'entraînement utilise l'optimiseur Adam et une Cross-Entropy Loss, validé par un 'Patient-Level Split' strict pour garantir que le modèle généralise sur de nouvelles anatomies sans mémorisation."
                 },
                 {
-                    "title": "4. Déploiement MLOps",
-                    "content": "Containerisation Docker Compose. App Streamlit pour l'interface, MinIO pour le stockage S3, PostgreSQL pour les métadonnées et MLflow pour le suivi des expériences."
+                    "title": "4. Infrastructure & MLOps",
+                    "content": "Conception d'une architecture Micro-services 'Cloud-Ready' orchestrée par Docker Compose. Le système comprend un stockage d'images découplé via MinIO (S3-compatible), une base de données PostgreSQL pour les métadonnées et une interface Streamlit interactive pour le clinicien."
                 }
             ],
             "challenges": [
