@@ -49,7 +49,7 @@ export default function Projects({ projects, t }) {
                             transition={{ delay: idx * 0.1 }}
                             layoutId={`project-card-${project.title}`}
                             onClick={() => setSelectedProject(project)}
-                            className="group bg-bio-dark border border-white/10 rounded-xl overflow-hidden hover:border-data-accent/50 transition-all duration-300 relative z-20 cursor-pointer"
+                            className="group bg-bio-dark border border-white/10 rounded-xl overflow-hidden hover:border-data-accent/50 transition-all duration-300 relative z-20 cursor-pointer h-full flex flex-col"
                         >
                             <div className="h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
                                 {project.image ? (
@@ -69,7 +69,7 @@ export default function Projects({ projects, t }) {
                                 )}
                             </div>
 
-                            <div className="p-6">
+                            <div className="p-6 flex-1 flex flex-col">
                                 <h3 className="text-xl font-bold mb-1 group-hover:text-data-accent transition-colors">
                                     {project.title}
                                 </h3>
@@ -189,6 +189,25 @@ export default function Projects({ projects, t }) {
                                                         <p className="text-sm text-gray-400 italic text-center">{item.caption}</p>
                                                     </div>
                                                 ))}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {/* Live Embed (PowerBI, etc.) */}
+                                    {selectedProject.embedUrl && (
+                                        <div className="mb-8">
+                                            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                                                <ExternalLink className="w-5 h-5 text-data-accent" />
+                                                Live Demo
+                                            </h3>
+                                            <div className="aspect-video w-full rounded-xl overflow-hidden border border-white/10 bg-black/50">
+                                                <iframe
+                                                    title={selectedProject.title}
+                                                    src={selectedProject.embedUrl}
+                                                    className="w-full h-full"
+                                                    frameBorder="0"
+                                                    allowFullScreen="true"
+                                                />
                                             </div>
                                         </div>
                                     )}

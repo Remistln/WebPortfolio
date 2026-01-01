@@ -324,6 +324,138 @@
                     "caption": "Confusion Matrix: Performance validation on test set"
                 }
             ]
+        },
+        {
+            "title": "BioSeq-Analyzer",
+            "subtitle": "Bioinformatics Analysis Suite & Protein Characterization",
+            "image": "/images/projects/bioseq/dotplot.png",
+            "url": "https://github.com/Remistln/BioSeq-Analyzer",
+            "description": "An interactive platform unifying multimodal sequence analysis. From pair-wise DNA alignment to structural protein characterization via UniProt.",
+            "longDescription": "Biological sequence analysis often requires juggling between obscure command-line scripts and fragmented web portals. BioSeq-Analyzer centralizes these workflows in a robust Streamlit application. Designed to facilitate genomic and proteomic exploration, the tool allows researchers to statistically validate sequence alignments, dynamically translate nucleic acids into proteins (ORF finding), and automatically retrieve rich functional metadata. The architecture relies on seamless integration of major domain APIs (NCBI Entrez, UniProt), transforming raw FASTA data into actionable biological insights (AlphaFold 3D structures, associated literature, functional domains) in a few clicks.",
+            "tags": [
+                "Bioinformatics",
+                "Streamlit",
+                "Biopython",
+                "API Integration",
+                "Data Visualization"
+            ],
+            "steps": [
+                {
+                    "title": "1. Ingestion & Algorithmic Alignment",
+                    "content": "Support for standard FASTA format with parsing via Biopython. Implementation of configurable global (Needleman-Wunsch) and local (Smith-Waterman) alignment algorithms. Addition of a statistical validation layer using Monte-Carlo method (50+ shuffles) to distinguish real biological similarities from random noise."
+                },
+                {
+                    "title": "2. Structural Visualization (Dotplots)",
+                    "content": "Development of a customized matrix visualization engine (Dotplot) with Matplotlib. The user can filter visual noise by dynamically adjusting sliding window sizes and stringency thresholds to reveal repeats, inversions, and conserved domains."
+                },
+                {
+                    "title": "3. Translation & ORF Discovery",
+                    "content": "Open Reading Frame (ORF) detection algorithm on 6 frames (Forward/Reverse). The system intelligently identifies the most probable protein candidate (based on length and START/STOP codons) and allows cross-validation via BLASTN against RefSeq transcriptomic databases."
+                },
+                {
+                    "title": "4. Functional Enrichment (UniProt)",
+                    "content": "Real-time connection to the UniProtKB API to enrich identified sequences. The application aggregates and presents in a structured manner: subcellular localization, associated pathologies, InterPro domains, and links to AlphaFold structure predictions."
+                }
+            ],
+            "challenges": [
+                {
+                    "title": "State Management & API Latency",
+                    "content": "Synchronous querying of massive databases (NCBI BLAST) can freeze the interface. I had to implement fine-grained Streamlit `session_state` management and caching mechanisms to preserve user experience fluidity while handling timeouts and rate limiting."
+                },
+                {
+                    "title": "Alignment Score Normalization",
+                    "content": "A raw alignment score is difficult to interpret without context. Integrating the randomization test (shuffling) required optimizing Numpy calculation loops to generate a reference distribution on the fly without impacting tool reactivity."
+                }
+            ],
+            "stack": {
+                "Frontend": "Streamlit",
+                "Core Logic": "Biopython, Pandas",
+                "Scientific Stack": "NumPy, Matplotlib",
+                "External APIs": "NCBI Entrez (Bio.Entrez), UniProt REST",
+                "Security": "SSL Context Management"
+            },
+            "gallery": [
+                {
+                    "src": "/images/projects/bioseq/dotplot.png",
+                    "caption": "Matrix visualization (Dotplot) for detection of repeats and homologies"
+                },
+                {
+                    "src": "/images/projects/bioseq/alignment.png",
+                    "caption": "Optimal sequence alignment (Global/Local) with substitution matrix"
+                },
+                {
+                    "src": "/images/projects/bioseq/most_likely_protein.png",
+                    "caption": "ORF Detection Algorithm: Identification of the most probable protein candidate"
+                },
+                {
+                    "src": "/images/projects/bioseq/prot_association.png",
+                    "caption": "Protein identification in the NCBI database using BLAST"
+                }
+            ]
+        },
+        {
+            "title": "Patient Performance Overview",
+            "subtitle": "Hospital Analytics Dashboard & KPIs",
+            "image": "/images/projects/patient_performance_overview/home.png",
+            "description": "Business Intelligence dashboard for hospital performance monitoring. Multidimensional analysis of patient distribution, departmental efficiency, and satisfaction.",
+            "longDescription": "In a high-pressure hospital environment, visibility into patient flow is critical. This Power BI project transforms raw admission and treatment data into actionable insights. The report enables administrators to track key indicators (Average Length of Stay, Occupancy Rate, Satisfaction) in real-time and filter these metrics by department or practitioner. The interface is designed for intuitive navigation, simulating a web application experience within the BI tool.",
+            "tags": [
+                "Power BI",
+                "DAX",
+                "Data Modeling",
+                "UX Design",
+                "Healthcare"
+            ],
+            "steps": [
+                {
+                    "title": "1. Star Schema Modeling",
+                    "content": "Design of a robust data model: separation of fact tables (Admissions, Consultations) and dimensions (Time, Patients, Departments) to ensure fast cross-filtering performance."
+                },
+                {
+                    "title": "2. Advanced DAX Measures",
+                    "content": "Development of complex DAX measures for dynamic KPIs: Time Intelligence (YTD, YoY), moving averages for trends, and calculation groups for dynamic metric switching."
+                },
+                {
+                    "title": "3. Design & Navigation",
+                    "content": "Creation of a fluid user experience using Bookmarks and navigation buttons. Use of custom backgrounds (Figma) to break away from the standard Power BI 'grid' look."
+                },
+                {
+                    "title": "4. Patient Journey Analysis",
+                    "content": "Visualization of care pathway bottlenecks via decomposition trees and service performance matrices."
+                }
+            ],
+            "stack": {
+                "BI Tool": "Microsoft Power BI",
+                "Languages": "DAX, M (Power Query)",
+                "Data Source": "Excel / SQL",
+                "Design": "Figma (Backgrounds)"
+            },
+            "gallery": [
+                {
+                    "src": "/images/projects/patient_performance_overview/home.png",
+                    "caption": "Overview: Macro KPIs and trend indicators"
+                },
+                {
+                    "src": "/images/projects/patient_performance_overview/Home2.png",
+                    "caption": "Alternative View: Secondary performance indicators"
+                },
+                {
+                    "src": "/images/projects/patient_performance_overview/department.png",
+                    "caption": "Detailed Department Analysis (Flow & Efficiency)"
+                },
+                {
+                    "src": "/images/projects/patient_performance_overview/patient.png",
+                    "caption": "Patient Focus: Admissions detail and history"
+                },
+                {
+                    "src": "/images/projects/patient_performance_overview/patient2.png",
+                    "caption": "Patient Detail: In-depth view and clinical history"
+                },
+                {
+                    "src": "/images/projects/patient_performance_overview/performance.png",
+                    "caption": "Performance Matrix and Decomposition Tree"
+                }
+            ]
         }
     ]
 }

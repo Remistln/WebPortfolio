@@ -324,6 +324,138 @@
                     "caption": "Matrice de confusion : Validation des performances sur le jeu de test"
                 }
             ]
+        },
+        {
+            "title": "BioSeq-Analyzer",
+            "subtitle": "Suite d'Analyse Bioinformatique & Caractérisation Protéique",
+            "image": "/images/projects/bioseq/dotplot.png",
+            "url": "https://github.com/Remistln/BioSeq-Analyzer",
+            "description": "Une plateforme interactive unifiant l'analyse de séquences multimodale. De l'alignement d'ADN pair-à-pair à la caractérisation structurelle de protéines via UniProt.",
+            "longDescription": "L'analyse de séquences biologiques nécessite souvent de jongler entre des scripts en ligne de commande obscurs et des portails web fragmentés. BioSeq-Analyzer centralise ces flux de travail dans une application Streamlit robuste. Conçue pour faciliter l'exploration génomique et protéomique, l'outil permet aux chercheurs de valider statistiquement des alignements de séquences, de traduire dynamiquement des acides nucléiques en protéines (ORF finding), et de récupérer automatiquement des métadonnées fonctionnelles riches. L'architecture repose sur une intégration transparente des API majeures du domaine (NCBI Entrez, UniProt), transformant des données brutes FASTA en insights biologiques exploitables (structures 3D AlphaFold, littérature associée, domaines fonctionnels) en quelques clics.",
+            "tags": [
+                "Bioinformatics",
+                "Streamlit",
+                "Biopython",
+                "API Integration",
+                "Data Visualization"
+            ],
+            "steps": [
+                {
+                    "title": "1. Ingestion & Alignement Algorithmique",
+                    "content": "Support du format standard FASTA avec parsing via Biopython. Implémentation d'algorithmes d'alignement globaux (Needleman-Wunsch) et locaux (Smith-Waterman) configurables. Ajout d'une couche de validation statistique par méthode de Monte-Carlo (50+ shuffles) pour distinguer les similitudes biologiques réelles du bruit aléatoire."
+                },
+                {
+                    "title": "2. Visualisation Structurelle (Dotplots)",
+                    "content": "Développement d'un moteur de visualisation matricielle (Dotplot) customizé avec Matplotlib. L'utilisateur peut filtrer le bruit visuel en ajustant dynamiquement la taille des fenêtres glissantes et les seuils de stringence (thresholds) pour révéler les répétitions, inversions et domaines conservés."
+                },
+                {
+                    "title": "3. Traduction & Découverte d'ORF",
+                    "content": "Algorithme de détection des cadres de lecture ouverts (ORF) sur 6 trames (Forward/Reverse). Le système identifie intelligemment le candidat protéique le plus probable (basé sur la longueur et les codons START/STOP) et permet la validation croisée via BLASTN sur les bases de données transcriptomiques RefSeq."
+                },
+                {
+                    "title": "4. Enrichissement Fonctionnel (UniProt)",
+                    "content": "Connexion en temps réel à l'API UniProtKB pour enrichir les séquences identifiées. L'application agrège et présente de manière structurée : la localisation subcellulaire, les pathologies associées, les domaines InterPro, et les liens vers les prédictions de structure AlphaFold."
+                }
+            ],
+            "challenges": [
+                {
+                    "title": "Gestion d'État & Latence API",
+                    "content": "L'interrogation synchrone de banques de données massives (NCBI BLAST) peut figer l'interface. J'ai dû implémenter une gestion fine des `session_state` Streamlit et des mécanismes de mise en cache pour préserver la fluidité de l'expérience utilisateur tout en gérant les timeouts et les limites de débit (rate limiting)."
+                },
+                {
+                    "title": "Normalisation des Scores d'Alignement",
+                    "content": "Un score d'alignement brut est difficilement interprétable sans contexte. L'intégration du test de randomisation (shuffling) a nécessité d'optimiser les boucles de calcul Numpy pour générer une distribution de référence à la volée sans impacter la réactivité de l'outil."
+                }
+            ],
+            "stack": {
+                "Frontend": "Streamlit",
+                "Core Logic": "Biopython, Pandas",
+                "Scientific Stack": "NumPy, Matplotlib",
+                "External APIs": "NCBI Entrez (Bio.Entrez), UniProt REST",
+                "Security": "SSL Context Management"
+            },
+            "gallery": [
+                {
+                    "src": "/images/projects/bioseq/dotplot.png",
+                    "caption": "Visualisation matricielle (Dotplot) pour la détection de répétitions et d'homologies"
+                },
+                {
+                    "src": "/images/projects/bioseq/alignment.png",
+                    "caption": "Alignement de séquences optimal (Global/Local) avec matrice de substitution"
+                },
+                {
+                    "src": "/images/projects/bioseq/most_likely_protein.png",
+                    "caption": "Algorithme de détection d'ORF : Identification du candidat protéique le plus probable"
+                },
+                {
+                    "src": "/images/projects/bioseq/prot_association.png",
+                    "caption": "Identification de la protéine dans la base NCBI via BLAST"
+                }
+            ]
+        },
+        {
+            "title": "Patient Performance Overview",
+            "subtitle": "Dashboard Analytique Hospitalier & KPIs",
+            "image": "/images/projects/patient_performance_overview/home.png",
+            "description": "Tableau de bord décisionnel Power BI pour le pilotage de la performance hospitalière. Analyse multidimensionnelle des flux patients, de l'efficacité des services et de la satisfaction.",
+            "longDescription": "Dans un contexte hospitalier sous tension, la visibilité sur les flux de patients est critique. Ce projet Power BI transforme des données brutes d'admission et de traitement en insights actionnables. Le rapport permet aux administrateurs de suivre en temps réel les indicateurs clés (Durée Moyenne de Séjour, Taux d'Occupation, Satisfaction) et de filtrer ces métriques par département ou par praticien. L'interface a été pensée pour une navigation intuitive, simulant une application web au sein même de l'outil de BI.",
+            "tags": [
+                "Power BI",
+                "DAX",
+                "Data Modeling",
+                "UX Design",
+                "Healthcare"
+            ],
+            "steps": [
+                {
+                    "title": "1. Modélisation en Étoile (Star Schema)",
+                    "content": "Conception d'un modèle de données robuste : séparation des tables de faits (Admissions, Consultations) et des dimensions (Temps, Patients, Départements) pour garantir la rapidité des filtres croisés."
+                },
+                {
+                    "title": "2. Mesures DAX Avancées",
+                    "content": "Développement de mesures complexes en DAX pour le calcul de KPIs dynamiques : Time Intelligence (YTD, YoY), moyennes mobiles pour les tendances, et groupes de calcul pour le switch dynamique des métriques."
+                },
+                {
+                    "title": "3. Design & Navigation",
+                    "content": "Création d'une expérience utilisateur fluide avec des signets (Bookmarks) et des boutons de navigation. Utilisation de fonds personnalisés (Figma) pour sortir du look 'grille' standard de Power BI."
+                },
+                {
+                    "title": "4. Analyse Parcours Patient",
+                    "content": "Visualisation des goulots d'étranglement dans le parcours de soin via des graphiques de décomposition et des matrices de performance par service."
+                }
+            ],
+            "stack": {
+                "BI Tool": "Microsoft Power BI",
+                "Languages": "DAX, M (Power Query)",
+                "Data Source": "Excel / SQL",
+                "Design": "Figma (Backgrounds)"
+            },
+            "gallery": [
+                {
+                    "src": "/images/projects/patient_performance_overview/home.png",
+                    "caption": "Vue d'ensemble : KPIs macro et indicateurs de tendance"
+                },
+                {
+                    "src": "/images/projects/patient_performance_overview/Home2.png",
+                    "caption": "Vue Alternative : Indicateurs de performance secondaires"
+                },
+                {
+                    "src": "/images/projects/patient_performance_overview/department.png",
+                    "caption": "Analyse détaillée par Département (Flux & Efficacité)"
+                },
+                {
+                    "src": "/images/projects/patient_performance_overview/patient.png",
+                    "caption": "Focus Patient : Détail des admissions et historique"
+                },
+                {
+                    "src": "/images/projects/patient_performance_overview/patient2.png",
+                    "caption": "Détail Patient : Vue approfondie et historique clinique"
+                },
+                {
+                    "src": "/images/projects/patient_performance_overview/performance.png",
+                    "caption": "Matrice de Performance et Graphique de Décomposition"
+                }
+            ]
         }
     ]
 }
